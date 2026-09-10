@@ -1407,7 +1407,8 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
 @media print{
   @page{
     size:A4 portrait;
-    margin:22mm 14mm 20mm;
+    /* Chừa riêng vùng đầu/cuối trang cho header + footer cố định */
+    margin:30mm 14mm 30mm;
   }
 
   html,
@@ -1527,11 +1528,13 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
   }
 
   .print-header{
-    top:6mm;
+    top:7mm;
+    height:10mm;
   }
 
   .print-footer{
-    bottom:5mm;
+    bottom:7mm;
+    height:10mm;
   }
 
   .print-header-left,
@@ -1596,6 +1599,16 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
   .print-header,
   .print-footer{
     z-index:100;
+    box-sizing:border-box;
+  }
+
+  /* Không để các dòng liên hệ đè lên vùng nội dung khi Chrome phân trang */
+  .document-surface{
+    position:relative!important;
+  }
+
+  .document-surface article{
+    break-before:auto;
   }
 
   /* Không tạo khoảng cách thừa do sticky/mobile layout khi in */
