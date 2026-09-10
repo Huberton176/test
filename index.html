@@ -1410,7 +1410,8 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
 @media print{
   @page{
     size:A4 portrait;
-    margin:20mm 14mm 19mm 14mm;
+    /* Keep the document body away from the fixed print header/footer. */
+    margin:14mm 14mm 14mm 14mm;
   }
 
   html,
@@ -1516,15 +1517,19 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     background:#fff;
   }
 
+  /* Place the custom header/footer inside the outer page margin,
+     close to the physical page edge so they cannot cover body text. */
   .print-header{
-    top:-14mm!important;
-    min-height:8mm;
+    top:2mm!important;
+    height:7mm!important;
+    min-height:0!important;
     border-bottom:0.25mm solid #dfe4e8;
   }
 
   .print-footer{
-    bottom:-13mm!important;
-    min-height:8mm;
+    bottom:2mm!important;
+    height:7mm!important;
+    min-height:0!important;
     border-top:0.25mm solid #dfe4e8;
   }
 
@@ -1678,7 +1683,7 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     <section class="document-surface">
 
 <article>
-<!-- Mục 1: Lời nói đầu (Level x. -> h2) -->
+  <!-- Mục 1: Lời nói đầu (Level x. -> h2) -->
 <h2>1. Lời nói đầu</h2>
 <p>Các bản Hướng dẫn đánh giá và tổng hợp những bằng chứng hiện có nhằm mục đích hỗ trợ các chuyên gia y tế đề xuất phương pháp tiếp cận chẩn đoán hoặc điều trị tối ưu nhất cho từng bệnh nhân với một bệnh lý cụ thể. Hướng dẫn của ESC được thiết kế để phục vụ các chuyên gia y tế, tuy nhiên chúng tuyệt đối không thay thế cho trách nhiệm cá nhân của bác sĩ trong việc đưa ra các quyết định chính xác và phù hợp nhất dựa trên tình trạng sức khỏe thực tế của từng bệnh nhân. Các quyết định này cần được đưa ra sau khi tham vấn kỹ lưỡng với bệnh nhân hoặc người chăm sóc của họ (trong những trường hợp thích hợp và/hoặc cần thiết). Chuyên gia y tế cũng phải có trách nhiệm kiểm chứng lại các quy tắc và quy định liên quan đến việc kê đơn thuốc và sử dụng thiết bị y tế tại quốc gia của mình tại thời điểm đưa ra quyết định kê toa, đồng thời luôn tôn trọng các nguyên tắc đạo đức nghề nghiệp.</p>
 
