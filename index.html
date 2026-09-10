@@ -1416,62 +1416,72 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     /* Chrome 131+: real print margin boxes.
        These are part of the page layout, not the document flow,
        so they cannot overlap body content. */
+    /* HEADER: nền đỏ đô, nội dung trắng/in đậm */
     @top-left{
-      content:"ⓕ  Hoàng Linh";
+      content:"Khuyến cáo ESC 2026";
+      background:#860000;
+      color:#fff;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
-      font-size:8pt;
-      font-weight:700;
-      color:#111;
+      font-size:8.5pt;
+      font-weight:800;
       white-space:nowrap;
+      text-align:left;
+      padding:2.5mm 4mm;
     }
 
     @top-center{
-      content:"Link bài đọc: https://example.com";
-      font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
-      font-size:8pt;
-      font-weight:700;
-      color:#111;
-      white-space:nowrap;
-      text-align:center;
+      content:"";
+      background:#860000;
+      padding:2.5mm 0;
     }
 
     @top-right{
-      content:"✉  dr.tthlinh@gmail.com";
+      content:"Biên dịch: BS. Trần Thanh Hoàng Linh";
+      background:#860000;
+      color:#fff;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
-      font-size:8pt;
-      font-weight:700;
-      color:#111;
+      font-size:8.5pt;
+      font-weight:800;
       white-space:nowrap;
       text-align:right;
+      padding:2.5mm 4mm;
     }
 
+    /* FOOTER: nền xám, chữ đen */
     @bottom-left{
-      content:"https://example.com";
+      content:"ⓕ  Hoàng Linh";
+      background:#e3e3e3;
+      color:#111;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
-      font-size:7pt;
-      font-weight:500;
-      color:#333;
+      font-size:7.5pt;
+      font-weight:700;
       white-space:nowrap;
+      text-align:left;
+      padding:2mm 4mm;
     }
 
     @bottom-center{
-      content:"Hướng dẫn năm 2026 của ESC về quản lý bệnh suy tim — Medical Library";
+      content:"Link đọc bài viết: https://example.com";
+      background:#e3e3e3;
+      color:#111;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
-      font-size:7pt;
-      font-weight:600;
-      color:#333;
+      font-size:7.5pt;
+      font-weight:700;
       white-space:nowrap;
       text-align:center;
+      padding:2mm 2mm;
     }
 
     @bottom-right{
-      content:counter(page) "/" counter(pages);
+      content:counter(page);
+      background:#e3e3e3;
+      color:#111;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
-      font-size:7pt;
-      font-weight:600;
-      color:#333;
+      font-size:7.5pt;
+      font-weight:700;
       white-space:nowrap;
       text-align:right;
+      padding:2mm 4mm;
     }
   }
 
@@ -1564,20 +1574,20 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     top:50%!important;
     transform:translate(-50%,-50%)!important;
     width:auto!important;
-    height:100vh!important;
-    max-width:100vw!important;
+    height:90vh!important;
+    max-width:78vw!important;
     align-items:center!important;
     justify-content:center!important;
     pointer-events:none!important;
-    opacity:.20!important;
+    opacity:.08!important;
     z-index:10!important;
   }
 
   .print-watermark img{
     display:block!important;
     width:auto!important;
-    height:100vh!important;
-    max-width:100vw!important;
+    height:150vh!important;
+    max-width:90vw!important;
     margin:0!important;
     object-fit:contain!important;
   }
