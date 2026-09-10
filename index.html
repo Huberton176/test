@@ -1420,7 +1420,7 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     /* HEADER: nền đỏ đô, nội dung trắng/in đậm */
     @top-left{
       content:"Khuyến cáo ESC 2026";
-      background:#860000;
+      background:transparent;
       color:#fff;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
       font-size:8pt;
@@ -1432,13 +1432,13 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
 
     @top-center{
       content:"";
-      background:#860000;
+      background:transparent;
       padding:2.5mm 0;
     }
 
     @top-right{
       content:"Biên dịch: BS. Trần Thanh Hoàng Linh";
-      background:#860000;
+      background:transparent;
       color:#fff;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
       font-size:8pt;
@@ -1451,7 +1451,7 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     /* FOOTER: nền xám, chữ đen */
     @bottom-left{
       content:"ⓕ  Hoàng Linh";
-      background:#e3e3e3;
+      background:transparent;
       color:#111;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
       font-size:7pt;
@@ -1463,7 +1463,7 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
 
     @bottom-center{
       content:"Link đọc bài viết: https://example.com";
-      background:#e3e3e3;
+      background:transparent;
       color:#111;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
       font-size:7pt;
@@ -1475,7 +1475,7 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
 
     @bottom-right{
       content:counter(page);
-      background:#e3e3e3;
+      background:transparent;
       color:#111;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
       font-size:7pt;
@@ -1494,6 +1494,37 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     padding:0!important;
     -webkit-print-color-adjust:exact;
     print-color-adjust:exact;
+  }
+
+  /* Full-bleed color bands: extend across the physical page,
+     while the actual header/footer text remains constrained by @page margins. */
+  body{
+    position:relative!important;
+  }
+
+  body::before,
+  body::after{
+    content:"";
+    position:fixed!important;
+    left:0!important;
+    right:0!important;
+    width:100%!important;
+    pointer-events:none!important;
+    z-index:0!important;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  body::before{
+    top:0!important;
+    height:10mm!important;
+    background:#860000!important;
+  }
+
+  body::after{
+    bottom:0!important;
+    height:10mm!important;
+    background:#e3e3e3!important;
   }
 
   .reader-layout{
