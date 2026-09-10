@@ -1412,22 +1412,16 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
   @page{
     size:A4 portrait;
     margin:9mm 18mm 9mm 18mm;
-    /* Full-width print bands: red at top, white content area, grey at bottom. */
-    background:linear-gradient(
-      to bottom,
-      #860000 0mm,
-      #860000 9mm,
-      #ffffff 9mm,
-      #ffffff calc(100% - 9mm),
-      #e3e3e3 calc(100% - 9mm),
-      #e3e3e3 100%
-    );
+    /* Keep the page itself white. Header/footer colors are painted
+       by the six margin boxes below so the colored bands stay isolated
+       from the document content. */
+    background:#ffffff;
 
     /* HEADER — all three margin boxes share the same background,
        so the red band runs continuously across both side margins. */
     @top-left{
       content:"Khuyến cáo ESC 2026";
-      background:transparent;
+      background:#860000;
       color:#fff;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
       font-size:8pt;
@@ -1440,12 +1434,12 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
 
     @top-center{
       content:"";
-      background:transparent;
+      background:#860000;
     }
 
     @top-right{
       content:"Biên dịch: BS. Trần Thanh Hoàng Linh";
-      background:transparent;
+      background:#860000;
       color:#fff;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
       font-size:8pt;
@@ -1459,7 +1453,7 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     /* FOOTER — same principle, grey band across the full margin width. */
     @bottom-left{
       content:"ⓕ  Hoàng Linh";
-      background:transparent;
+      background:#e3e3e3;
       color:#111;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
       font-size:7pt;
@@ -1472,7 +1466,7 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
 
     @bottom-center{
       content:"Link đọc bài viết: https://example.com";
-      background:transparent;
+      background:#e3e3e3;
       color:#111;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
       font-size:7pt;
@@ -1485,7 +1479,7 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
 
     @bottom-right{
       content:counter(page);
-      background:transparent;
+      background:#e3e3e3;
       color:#111;
       font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
       font-size:7pt;
