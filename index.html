@@ -1041,12 +1041,17 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     padding-top:10px;
   }
 
-  /* Ẩn mục lục Sidebar (Bản Desktop) */
   .toc-panel{
     display:none;
   }
 
-  /* 1. THIẾT KẾ LẠI MỤC LỤC MOBILE: NỔI BẬT VÀ GHIM ĐỈNH (STICKY) */
+  /* 1. ÉP CHẶT KHOẢNG CÁCH GIỮA CÁC BOX BẰNG FLEXBOX */
+  .reader-main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Khoảng cách cố định, triệt tiêu mọi margin thừa */
+  }
+
   .mobile-toc{
     position:sticky;
     top:10px;
@@ -1055,12 +1060,12 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     display:flex;
     align-items:center;
     gap:10px;
-    margin:0 0 16px;
+    margin:0 !important; /* Xóa margin cũ vì đã dùng gap */
     padding:10px 14px;
     border:1px solid var(--border);
     border-radius:12px;
     background:var(--surface);
-    box-shadow:0 6px 20px rgba(0,0,0,0.1); /* Đổ bóng để nổi lên trên văn bản */
+    box-shadow:0 6px 20px rgba(0,0,0,0.1);
   }
 
   .mobile-toc label{
@@ -1083,24 +1088,22 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     font-weight:600;
   }
 
-  /* 2. CHỈNH SỬA LẠI BOX GUIDELINE (HERO) */
   .reader-hero{
     position:static;
     top:auto;
-    padding:20px 18px; /* Giảm độ dày của box */
-    margin-bottom:16px;
+    padding:20px 18px;
+    margin-bottom:0 !important; /* Xóa margin cũ */
     box-shadow:var(--shadow);
   }
 
   .reader-hero h1{
-    font-size:24px !important; /* Dùng !important đè style="font-size:30px" trong HTML */
+    font-size:24px !important;
   }
 
   .document-surface article{
     padding:20px 18px 40px;
   }
 
-  /* Tránh bị thanh Mục lục (đang sticky) che lấp tiêu đề khi bấm cuộn tới */
   .document-surface h1, .document-surface h2, .document-surface h3, 
   .document-surface h4, .document-surface h5{
     scroll-margin-top: 80px; 
@@ -1110,7 +1113,7 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
 @media(max-width:640px){
   :root{
     --body-size:15px;
-    --paragraph-indent:0;
+    --paragraph-indent: 1.5rem; /* 2. PHỤC HỒI THỤT ĐẦU DÒNG CHO MOBILE */
     --line-height:1.6;
   }
 
@@ -1118,29 +1121,37 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     width:calc(100% - 16px);
   }
 
-  /* 2. ÉP GỌN TIẾP BOX GUIDELINE CHO MÀN HÌNH NHỎ */
   .reader-hero{
     padding:16px 14px;
     border-radius:12px;
   }
 
   .reader-hero h1{
-    font-size:20px !important; /* Chữ nhỏ lại, gọn gàng hơn */
+    font-size:20px !important;
     line-height:1.35 !important;
   }
 
   .reader-hero p{
-    margin-top:6px; /* Giảm khoảng cách thừa */
+    margin-top:6px;
   }
 
   .document-surface{
     border-radius:12px;
+    margin-top:0 !important;
   }
 
-  /* 3. BẬT LẠI CĂN ĐỀU 2 BÊN (JUSTIFY) */
   .document-surface article{
     padding:16px 14px 35px;
-    text-align:justify; /* Căn đều 2 bên theo đúng yêu cầu */
+    text-align:justify; 
+  }
+
+  /* 3. LỌC SẠCH KHOẢNG TRẮNG ẢO BÊN TRONG BÀI VIẾT */
+  .document-surface article > *:first-child {
+    margin-top: 0 !important; /* Chặn margin của thẻ đầu tiên đẩy nội dung xuống */
+  }
+  .document-surface article p:empty, 
+  .document-surface article br:first-child {
+    display: none !important; /* Ẩn các thẻ p trống hoặc dấu xuống dòng thừa */
   }
 
   .document-surface h1{ font-size:1.45em; margin:1.4rem 0 .8rem; }
@@ -1149,8 +1160,18 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
   .document-surface h4{ font-size:1.05em; margin:1em 0 .4em; }
   .document-surface h5{ font-size:.95em; }
 
+  /* Bật lại thụt đầu dòng cho thẻ P */
   .document-surface article>p{
-    text-indent:0;
+    text-indent: var(--paragraph-indent); 
+  }
+
+  /* Đảm bảo chữ trong bảng/hộp ghi chú không bị thụt lề */
+  .document-surface .info-box p,
+  .document-surface .step-card p,
+  .document-surface .abbr-container p,
+  .document-surface .abbreviations p,
+  .document-surface table p {
+    text-indent: 0;
   }
 
   .document-surface table{
