@@ -1489,6 +1489,101 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
       vertical-align:middle;
       padding:1mm 4mm;
     }
+    @page{
+  size:A4 portrait;
+  margin:9mm 18mm 9mm 18mm;
+  background:#ffffff;
+
+  /* ===== GÓC TRÊN — nối liền dải đỏ với @top-left / @top-right ===== */
+  @top-left-corner{
+    content:"";
+    background:#860000;
+  }
+  @top-right-corner{
+    content:"";
+    background:#860000;
+  }
+
+  @top-left{
+    content:"Khuyến cáo ESC 2026";
+    background:#860000;
+    color:#fff;
+    font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+    font-size:8pt;
+    font-weight:800;
+    white-space:nowrap;
+    text-align:left;
+    vertical-align:middle;
+    padding:1mm 4mm;
+  }
+
+  @top-center{
+    content:"";
+    background:#860000;
+  }
+
+  @top-right{
+    content:"Biên dịch: BS. Trần Thanh Hoàng Linh";
+    background:#860000;
+    color:#fff;
+    font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+    font-size:8pt;
+    font-weight:800;
+    white-space:nowrap;
+    text-align:right;
+    vertical-align:middle;
+    padding:1mm 4mm;
+  }
+
+  /* ===== GÓC DƯỚI — nối liền dải xám với @bottom-left / @bottom-right ===== */
+  @bottom-left-corner{
+    content:"";
+    background:#e3e3e3;
+  }
+  @bottom-right-corner{
+    content:"";
+    background:#e3e3e3;
+  }
+
+  @bottom-left{
+    content:"ⓕ  Hoàng Linh";
+    background:#e3e3e3;
+    color:#111;
+    font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+    font-size:7pt;
+    font-weight:700;
+    white-space:nowrap;
+    text-align:left;
+    vertical-align:middle;
+    padding:1mm 4mm;
+  }
+
+  @bottom-center{
+    content:"Link đọc bài viết: https://example.com";
+    background:#e3e3e3;
+    color:#111;
+    font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+    font-size:7pt;
+    font-weight:700;
+    white-space:nowrap;
+    text-align:center;
+    vertical-align:middle;
+    padding:1mm;
+  }
+
+  @bottom-right{
+    content:counter(page);
+    background:#e3e3e3;
+    color:#111;
+    font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+    font-size:7pt;
+    font-weight:700;
+    white-space:nowrap;
+    text-align:right;
+    vertical-align:middle;
+    padding:1mm 4mm;
+  }
+}
   }
 
   html,
@@ -1712,745 +1807,7 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     <section class="document-surface">
 
 <article>
-<!-- Mục 1: Lời nói đầu (Level x. -> h2) -->
-<h2>1. Lời nói đầu</h2>
-<p>Các bản Hướng dẫn đánh giá và tổng hợp những bằng chứng hiện có nhằm mục đích hỗ trợ các chuyên gia y tế đề xuất phương pháp tiếp cận chẩn đoán hoặc điều trị tối ưu nhất cho từng bệnh nhân với một bệnh lý cụ thể. Hướng dẫn của ESC được thiết kế để phục vụ các chuyên gia y tế, tuy nhiên chúng tuyệt đối không thay thế cho trách nhiệm cá nhân của bác sĩ trong việc đưa ra các quyết định chính xác và phù hợp nhất dựa trên tình trạng sức khỏe thực tế của từng bệnh nhân. Các quyết định này cần được đưa ra sau khi tham vấn kỹ lưỡng với bệnh nhân hoặc người chăm sóc của họ (trong những trường hợp thích hợp và/hoặc cần thiết). Chuyên gia y tế cũng phải có trách nhiệm kiểm chứng lại các quy tắc và quy định liên quan đến việc kê đơn thuốc và sử dụng thiết bị y tế tại quốc gia của mình tại thời điểm đưa ra quyết định kê toa, đồng thời luôn tôn trọng các nguyên tắc đạo đức nghề nghiệp.</p>
-
-<p>Các tài liệu Hướng dẫn của ESC thể hiện quan điểm chính thức của ESC về một chủ đề cụ thể. Các chủ đề hướng dẫn được lựa chọn để tiến hành cập nhật sau quá trình rà soát chuyên môn hàng năm về những bằng chứng mới, do Ủy ban Hướng dẫn Thực hành Lâm sàng (CPG) của ESC thực hiện. Các Chính sách và Quy trình xây dựng, ban hành Hướng dẫn của ESC có thể được tìm thấy trên trang web chính thức của ESC (<a href="https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Guidelines-development/Writing-ESC-Guidelines" target="_blank" rel="noopener noreferrer">Writing ESC Guidelines</a>).</p>
-
-<p>Bản hướng dẫn này cập nhật và thay thế cho phiên bản trước đó được xuất bản vào năm 2021. Nhóm Chuyên trách lần này đã được ESC chọn lọc kỹ lưỡng, quy tụ các chuyên gia trực tiếp tham gia vào công tác chăm sóc y tế cho bệnh nhân mắc bệnh lý này, đồng thời có sự góp mặt của đại diện bệnh nhân và các chuyên gia phương pháp luận. Quy trình tuyển chọn bao gồm một đợt kêu gọi mở dành cho các tác giả, với định hướng bao trùm sự tham gia của các thành viên đến từ toàn bộ khu vực hoạt động của ESC và từ các Cộng đồng Chuyên ngành phụ liên quan thuộc ESC. Yếu tố đa dạng và tính hòa nhập đã được xem xét và đặt lên hàng đầu.</p>
-
-<p>Các Nhóm Chuyên trách Hướng dẫn chịu trách nhiệm tiến hành đánh giá và bình duyệt một cách nghiêm ngặt các tài liệu y văn đã xuất bản liên quan đến những phương pháp chẩn đoán và điều trị, trong đó bao gồm cả việc phân tích tỷ lệ lợi ích – rủi ro. Các khuyến cáo được xây dựng dựa trên những thử nghiệm ngẫu nhiên quy mô lớn và các bản phân tích gộp (meta-analyses) từ các bài tổng quan hệ thống có tính liên quan cao, khi có sẵn. Các đợt tìm kiếm y văn hệ thống sẽ được tiến hành trong những trường hợp còn tồn tại tranh cãi hoặc sự không chắc chắn, nhằm bảo đảm rằng không có bất kỳ nghiên cứu trọng yếu nào bị bỏ sót. Đối với các khuyến cáo liên quan đến chẩn đoán và tiên lượng, nhóm chuyên trách còn xem xét thêm các loại hình bằng chứng bổ sung, chẳng hạn như những nghiên cứu về độ chính xác của chẩn đoán và các nghiên cứu tập trung vào việc phát triển cũng như thẩm định các mô hình tiên lượng. Mức độ tin cậy của từng khuyến cáo và cấp độ bằng chứng hỗ trợ cho khuyến cáo đó sẽ được cân nhắc và chấm điểm dựa trên những tiêu chí đã được xác định trước. Tiêu chuẩn để xếp hạng mức độ tin cậy của các khuyến cáo được mô tả chi tiết trong <em>Bảng 1</em>. Một hệ thống phân loại mới dành cho cấp độ bằng chứng của Hướng dẫn ESC đã được công bố <sup>[1,2]</sup> và lần đầu tiên được đưa vào ứng dụng trong các Hướng dẫn năm 2026 của ESC. Đối với mảng điều trị và phòng ngừa, khung đánh giá này bao gồm việc xem xét cẩn trọng loại hình nghiên cứu, số lượng các nghiên cứu hỗ trợ cho một khuyến cáo, đồng thời đánh giá xem một nghiên cứu có đủ năng lực thống kê hay không, có cho thấy bằng chứng đáng kể chống lại sự ngẫu nhiên (play of chance), và có không chứa đựng các nguồn sai số (bias) nghiêm trọng hay không. Tiêu chí này được trình bày cụ thể trong <em>Bảng 2</em>. Một hệ thống chấm điểm riêng biệt cũng đã được phát triển dành riêng cho các xét nghiệm chẩn đoán và mô hình dự báo, được giới thiệu ở <em>Bảng 3</em>.</p>
-
-<p>Các Thang đo Kết cục Báo cáo bởi Bệnh nhân (PROMs) và Thang đo Trải nghiệm Báo cáo bởi Bệnh nhân (PREMs) cũng được đưa vào đánh giá (nếu có) để làm cơ sở cho các khuyến cáo và/hoặc các nội dung thảo luận trong những hướng dẫn này.</p>
-
-<p>Các bảng bằng chứng tóm tắt những thông tin cốt lõi từ các nghiên cứu liên quan được thiết lập nhằm hỗ trợ quá trình hình thành các khuyến cáo, nâng cao khả năng hiểu rõ các khuyến cáo sau khi được công bố, và củng cố tính minh bạch trong toàn bộ quy trình xây dựng hướng dẫn. Những bảng này được công bố trong một mục riêng biệt của Hướng dẫn ESC và trỏ đến các bảng khuyến cáo cụ thể tương ứng.</p>
-
-<p>Sau một quá trình thảo luận lặp đi lặp lại nhiều vòng, cuộc bỏ phiếu đầu tiên của Nhóm Chuyên trách cho tất cả các khuyến cáo sẽ được tiến hành trước khi bắt đầu các vòng bình duyệt. Cuộc bỏ phiếu thứ hai của Nhóm Chuyên trách về toàn bộ các khuyến cáo sẽ được thực hiện sau khi vòng bình duyệt và chỉnh sửa cuối cùng khép lại. Đối với mỗi cuộc bỏ phiếu, Nhóm Chuyên trách tuân thủ nghiêm ngặt các quy tắc biểu quyết của ESC: để đạt được số đại biểu biểu quyết tối thiểu (quorum), ít nhất hai phần ba số thành viên Nhóm Chuyên trách phải bỏ phiếu đồng ý hoặc không đồng ý; và để được thông qua, tất cả các khuyến cáo đòi hỏi phải có ít nhất 75% số phiếu tán thành (không tính các phiếu trắng). Các biện pháp hạn chế về quyền bỏ phiếu và quyền tham gia vào các cuộc thảo luận của nhóm chuyên trách sẽ được áp dụng khi cần thiết, căn cứ vào các tờ khai về quyền lợi.</p>
-
-<p>Các thành viên tham gia biên soạn và bình duyệt tài liệu phải cung cấp mẫu tờ khai về quyền lợi, liệt kê tất cả các mối quan hệ có khả năng bị xem là nguồn gốc thực tế hoặc tiềm tàng của xung đột lợi ích. Các tờ khai về quyền lợi này sẽ được xét duyệt dựa trên bộ quy tắc kê khai quyền lợi của ESC (có thể tham khảo trên trang web của ESC: <a href="http://www.escardio.org/doi" target="_blank" rel="noopener noreferrer">ESC Declaration of Interest</a>) và được tập hợp lại trong một bản báo cáo, sau đó xuất bản thành một tài liệu bổ sung đi kèm với bộ hướng dẫn. Nguồn kinh phí hỗ trợ cho quá trình xây dựng Hướng dẫn ESC hoàn toàn bắt nguồn từ ESC, tuyệt đối không có sự can thiệp hay tham gia của ngành công nghiệp chăm sóc sức khỏe.</p>
-
-<p>Ủy ban Hướng dẫn Thực hành Lâm sàng (CPG) đảm nhiệm vai trò giám sát, điều phối quá trình chuẩn bị các bộ hướng dẫn mới và phê duyệt để xuất bản. Ngoài sự rà soát của CPG, Hướng dẫn ESC còn phải trải qua nhiều vòng bình duyệt chéo ẩn danh kép (double-blind peer review) trên một nền tảng đánh giá trực tuyến chuyên biệt. Đội ngũ bình duyệt bao gồm một hội đồng gồm 70 chuyên gia theo chủ đề hoặc nhiều hơn, bao gồm các thành viên đến từ các Hội Tim mạch Quốc gia thuộc ESC và từ các Cộng đồng Chuyên ngành phụ có liên quan của ESC. Những người bình duyệt sẽ thực hiện việc đánh giá phản biện, đưa ra nhận xét về nội dung của Hướng dẫn và phân loại các ý kiến đóng góp của họ theo mức độ quan trọng (chính/phụ). Nhóm Chuyên trách Hướng dẫn có trách nhiệm xem xét tất cả các ý kiến bình duyệt và bắt buộc phải đưa ra phản hồi trực tuyến cho toàn bộ những nhận xét được phân loại là chính. Các ý kiến bình duyệt này sẽ định hướng cho việc chỉnh sửa tài liệu sau mỗi vòng. Kết thúc vòng bình duyệt cuối cùng và sau cuộc bỏ phiếu lần hai của Nhóm Chuyên trách về toàn bộ các khuyến cáo, các thành viên Nhóm Chuyên trách và Ủy ban CPG sẽ cùng nhau phê chuẩn phiên bản tài liệu cuối cùng để chính thức công bố trên tạp chí <em>European Heart Journal</em>.</p>
-
-<p>Trừ khi có những ghi chú khác, các nội dung trong Hướng dẫn ESC đề cập đến giới tính, được hiểu là điều kiện sinh học của việc là nam hay nữ, vốn được quy định bởi hệ gen, hormone và cơ quan sinh dục. Việc sử dụng thuốc ngoài hướng dẫn kê toa (Off-label use) có thể xuất hiện trong hướng dẫn này nếu có mức độ bằng chứng đủ mạnh cho thấy điều đó có thể được coi là phù hợp về mặt y khoa đối với một tình trạng bệnh lý nhất định. Tuy nhiên, các quyết định về việc sử dụng thuốc ngoài hướng dẫn kê toa bắt buộc phải được đưa ra bởi chuyên gia y tế chịu trách nhiệm chính, và người này cần đặc biệt lưu tâm đến các nguyên tắc đạo đức trong chăm sóc sức khỏe, tình hình thực tế cụ thể của bệnh nhân, sự đồng ý của bệnh nhân, cũng như các quy định về sức khỏe đặc thù của từng quốc gia.</p>
-
-<!-- Bảng 1 -->
-<div class="table-wrapper">
-    <table class="rec-table" style="font-size: 14px;">
-        <caption style="font-size: 16px;">Bảng 1 Các nhóm khuyến cáo</caption>
-        <thead>
-            <tr>
-                <th style="width: 18%; text-align: center; vertical-align: middle;">Nhóm khuyến cáo</th>
-                <th style="text-align: center; vertical-align: middle;">Định nghĩa</th>
-                <th style="width: 25%; text-align: center; vertical-align: middle; white-space: nowrap;">Thuật ngữ<br>sử dụng</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="class-I ws-nowrap">Class I</td>
-                <td>Bằng chứng và/hoặc sự đồng thuận chung cho thấy một phương pháp điều trị hoặc thủ thuật nhất định là có lợi, hữu ích và hiệu quả.</td>
-                <td class="class-I ws-nowrap">"Được khuyến cáo"<br>hoặc "được chỉ định"</td>
-            </tr>
-            <tr class="table-section-header">
-                <td class="ws-nowrap" style="text-align: center; vertical-align: middle;">Class II</td>
-                <td colspan="2">Bằng chứng trái ngược nhau và/hoặc có sự phân kỳ trong quan điểm về tính hữu ích/hiệu quả của một phương pháp điều trị hoặc thủ thuật nhất định.</td>
-            </tr>
-            <tr>
-                <td class="class-IIa ws-nowrap">Class IIa</td>
-                <td style="padding-left: 2rem;">Sức nặng của bằng chứng/quan điểm nghiêng về tính hữu ích/hiệu quả.</td>
-                <td class="class-IIa ws-nowrap">"Nên được<br>xem xét"</td>
-            </tr>
-            <tr>
-                <td class="class-IIb ws-nowrap">Class IIb</td>
-                <td style="padding-left: 2rem;">Tính hữu ích/hiệu quả chưa được khẳng định chắc chắn bởi bằng chứng/quan điểm.</td>
-                <td class="class-IIb ws-nowrap">"Có thể được<br>xem xét"</td>
-            </tr>
-            <tr>
-                <td class="class-III ws-nowrap">Class III</td>
-                <td>Bằng chứng hoặc sự đồng thuận chung cho thấy phương pháp điều trị hoặc thủ thuật không hữu ích/không hiệu quả, và trong một số trường hợp có thể gây hại.</td>
-                <td class="class-III ws-nowrap">"Không được<br>khuyến cáo"</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- Bảng 2 -->
-<div class="table-wrapper">
-    <table class="rec-table" style="font-size: 14px; width: 100%;">
-        <caption style="font-size: 16px;"><strong>Bảng 2. Mức độ bằng chứng — điều trị và phòng ngừa</strong></caption>
-        <tbody>
-            <tr>
-                <td class="level-A ws-nowrap" style="text-align: center; vertical-align: middle;">Mức độ <br>bằng chứng A</td>
-                <td>Bằng chứng thuyết phục, thường dựa trên ít nhất hai thử nghiệm ngẫu nhiên có đối chứng được thiết kế đủ năng lực thống kê<sup>a</sup>, không có các sai số nghiêm trọng, với bằng chứng rõ rệt bác bỏ yếu tố ngẫu nhiên khi được kết hợp trong một phân tích gộp (ví dụ: <em>P</em> &lt; 0.005 để chứng minh tính vượt trội).<sup>b</sup></td>
-            </tr>
-            <tr>
-                <td class="level-b1 ws-nowrap" style="text-align: center; vertical-align: middle;">Mức độ <br>bằng chứng B1</td>
-                <td>Bằng chứng gợi ý từ ít nhất một thử nghiệm ngẫu nhiên có đối chứng được thiết kế đủ năng lực thống kê, không có sai số nghiêm trọng, hoặc từ một phân tích gộp của các thử nghiệm ngẫu nhiên có đối chứng như vậy, với một số bằng chứng loại trừ yếu tố ngẫu nhiên (ví dụ: <em>P</em> &lt; 0.05 để chứng minh tính vượt trội).<sup>c</sup></td>
-            </tr>
-            <tr>
-                <td class="level-b2 ws-nowrap" style="text-align: center; vertical-align: middle;">Mức độ <br>bằng chứng B2</td>
-                <td>Bằng chứng hạn chế từ ít nhất hai nghiên cứu không ngẫu nhiên với việc kiểm soát chặt chẽ các nguồn sai số nghiêm trọng và có bằng chứng đáng kể loại trừ yếu tố ngẫu nhiên (ví dụ: <em>P</em> &lt; 0.005 để chứng minh tính vượt trội),<sup>b</sup> hoặc từ một phân tích gộp của các thử nghiệm ngẫu nhiên có đối chứng quy mô nhỏ, thiếu năng lực thống kê với một số bằng chứng loại trừ yếu tố ngẫu nhiên (ví dụ: <em>P</em> &lt; 0.05 để chứng minh tính vượt trội).<sup>c</sup></td>
-            </tr>
-            <tr>
-                <td class="level-C ws-nowrap" style="text-align: center; vertical-align: middle;">Mức độ <br>bằng chứng C</td>
-                <td>Bằng chứng sơ bộ từ các nghiên cứu không ngẫu nhiên mà không kiểm soát chặt chẽ các nguồn sai số nghiêm trọng, hoặc từ một thử nghiệm ngẫu nhiên có đối chứng đơn lẻ, quy mô nhỏ, thiếu năng lực thống kê, hoặc từ sự đồng thuận của các chuyên gia.</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="2" style="font-size: 13px; color: #4a4a4a; text-align: justify; padding: 12px 15px; background-color: #f9f9f9; border-left: 4px solid #c0c0c0; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; line-height: 1.5;">
-                    <sup>a</sup> Trong một số trường hợp ngoại lệ, cấp độ bằng chứng A có thể được xem xét nếu (1) chỉ có một thử nghiệm ngẫu nhiên có đối chứng duy nhất với quy mô rất lớn cung cấp bằng chứng mang tính thuyết phục trên diện rộng đối tượng bệnh nhân và đã được phần lớn các bác sĩ thực hành chấp nhận rộng rãi, hoặc (2) hiệu quả của can thiệp là hoàn toàn hiển nhiên trên lâm sàng; trong cả hai trường hợp này, đòi hỏi phải có trên 90% số thành viên trong nhóm chuyên trách hướng dẫn bỏ phiếu đồng thuận xếp hạng cấp độ bằng chứng A.<br>
-                    <sup>b</sup> Các nghiên cứu đơn lẻ không bắt buộc phải chứng minh được bằng chứng đáng kể loại trừ yếu tố ngẫu nhiên (ví dụ: giá trị <em>P</em> &lt; 0.005 cho tính vượt trội) nếu như một phân tích gộp (meta-analysis) của các nghiên cứu này đã cung cấp được những bằng chứng đó.<br>
-                    <sup>c</sup> Các nghiên cứu đơn lẻ không bắt buộc phải chứng minh được một số bằng chứng loại trừ yếu tố ngẫu nhiên (ví dụ: giá trị <em>P</em> &lt; 0.05 cho tính vượt trội) nếu như một phân tích gộp của các nghiên cứu này đã cung cấp được những bằng chứng đó.
-                </td>
-            </tr>
-        </tfoot>
-    </table>
-</div>
-
-<!-- Bảng 3 -->
-<div class="table-wrapper">
-    <table class="rec-table" style="font-size: 14px; width: 100%;">
-        <caption style="font-size: 16px;"><strong>Bảng 3. Mức độ bằng chứng — xét nghiệm chẩn đoán và mô hình dự báo</strong></caption>
-        <thead>
-            <tr>
-                <th style="width: 18%; text-align: center; vertical-align: middle;">Mức độ bằng chứng</th>
-                <th style="width: 41%; text-align: center; vertical-align: middle;">Xét nghiệm chẩn đoán</th>
-                <th style="width: 41%; text-align: center; vertical-align: middle;">Mô hình dự báo<br>(Bao gồm các mô hình chẩn đoán và tiên lượng)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="level-A ws-nowrap" style="text-align: center; vertical-align: middle;">Mức độ <br>bằng chứng A</td>
-                <td>Bằng chứng thuyết phục về khả năng chẩn đoán đầy đủ từ ít nhất hai nghiên cứu chất lượng cao.</td>
-                <td>Bằng chứng thuyết phục về khả năng dự báo đầy đủ từ ít nhất một nghiên cứu xây dựng mô hình (derivation study) chất lượng cao và từ hai nghiên cứu kiểm định ngoại kiểm (external validation studies) trở lên với chất lượng tối thiểu ở mức trung bình.</td>
-            </tr>
-            <tr>
-                <td class="level-B ws-nowrap" style="text-align: center; vertical-align: middle;">Mức độ <br>bằng chứng B</td>
-                <td>Bằng chứng gợi ý về khả năng chẩn đoán đầy đủ từ một nghiên cứu đơn lẻ chất lượng cao hoặc ít nhất từ hai nghiên cứu có chất lượng trung bình.</td>
-                <td>Bằng chứng gợi ý về khả năng dự báo đầy đủ từ một hoặc nhiều nghiên cứu xây dựng mô hình và từ một hoặc nhiều nghiên cứu kiểm định ngoại kiểm với chất lượng tối thiểu ở mức trung bình.</td>
-            </tr>
-            <tr>
-                <td class="level-C ws-nowrap" style="text-align: center; vertical-align: middle;">Mức độ <br>bằng chứng C</td>
-                <td>Bằng chứng sơ bộ về khả năng chẩn đoán đầy đủ từ một nghiên cứu đơn lẻ có chất lượng trung bình, hoặc từ bất kỳ số lượng nghiên cứu nào có chất lượng thấp, hoặc từ sự đồng thuận của các chuyên gia.</td>
-                <td>Bằng chứng sơ bộ về khả năng dự báo đầy đủ từ một nghiên cứu xây dựng mô hình với chất lượng ít nhất là trung bình, nhưng lại thiếu vắng quá trình kiểm định ngoại kiểm hoặc kiểm định ngoại kiểm được tiến hành trong một nghiên cứu kém chất lượng, hoặc bắt nguồn từ một nghiên cứu xây dựng mô hình kém chất lượng (bất kể chất lượng của kiểm định ngoại kiểm ra sao).</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- Mục 2: Giới thiệu (Level x. -> h2) -->
-<h2>2. Giới thiệu</h2>
-<p>Trong phiên bản hướng dẫn này, chúng tôi đã tái định nghĩa lại phân loại suy tim (Heart Failure - HF) so với định nghĩa từng được áp dụng trong <em>Hướng dẫn năm 2021 của ESC về chẩn đoán và điều trị suy tim cấp và mạn tính</em>,<sup>[3]</sup> đồng thời mang đến một định nghĩa tối giản hơn nhằm mục đích đưa vào ứng dụng dễ dàng trong thực hành lâm sàng thường nhật. Do việc phát hiện sớm bệnh lý suy tim ngày càng đóng vai trò thiết yếu, chúng tôi đã thống nhất quan điểm với <em>Hướng dẫn năm 2022 của AHA/ACC/HFSA về quản lý bệnh suy tim</em>,<sup>[4]</sup> lồng ghép các yếu tố nguy cơ cũng như những dấu hiệu khởi phát sớm của suy tim vào hệ thống phân chia giai đoạn của bệnh. Một hệ thống phân loại mới nhất dành cho việc điều trị suy tim cũng đã được bổ sung, trong đó nhấn mạnh vai trò của các liệu pháp điều trị nội khoa nền tảng, điều trị nội khoa bổ sung, cũng như các liệu pháp can thiệp. <em>Hình 1</em> cung cấp một cái nhìn tổng quan về các khuyến cáo quản lý hiện hành đối với bệnh suy tim. Kể từ khi <em>Hướng dẫn ESC năm 2021 về chẩn đoán và điều trị suy tim cấp và mạn tính</em><sup>[3]</sup> và <em>Bản Cập nhật Trọng tâm năm 2023 của Hướng dẫn ESC năm 2021 về chẩn đoán và điều trị suy tim cấp và mạn tính</em><sup>[5]</sup> được công bố, ESC đã ban hành các hướng dẫn mới về việc diễn giải bằng chứng.<sup>[1,2]</sup> Hệ quả là, toàn bộ các khuyến cáo, dù mới hay cũ, đều đã được xếp hạng lại nhằm tuân thủ chặt chẽ hệ thống đánh giá bằng chứng phiên bản sửa đổi của ESC. Đối với những khuyến cáo liên quan đến nhiều hơn một kết cục, ví dụ: tử vong do nguyên nhân tim mạch (CV) và nhập viện vì suy tim (HFH), cách thức diễn đạt sẽ phản ánh chính xác việc cả hai kết cục đó đều có ý nghĩa thống kê riêng biệt (dùng từ 'VÀ') hay kết cục đó là một tiêu chí gộp (dùng từ 'HOẶC').</p>
-
-<p>Đối với mỗi chủ đề, chúng tôi đều đã cân nhắc kỹ lưỡng các khác biệt liên quan đến độ tuổi, giới tính và lồng ghép chúng vào các khuyến cáo nếu nhận thấy sự khác biệt đó mang ý nghĩa quan trọng trên lâm sàng.</p>
-
-<p>Kể từ khi <em>Hướng dẫn ESC năm 2021 về chẩn đoán và điều trị suy tim cấp và mạn tính</em><sup>[3]</sup> được công bố, một số hướng dẫn liên quan về các chủ đề chuyên biệt, chẳng hạn như tim mạch–ung thư<sup>[6]</sup>, thai kỳ<sup>[7]</sup>, viêm cơ tim<sup>[8]</sup>, bệnh van tim<sup>[9]</sup> và hội chứng vành mạn<sup>[10]</sup>, đã được ban hành. Trong hướng dẫn hiện tại, các chủ đề này không được đề cập chi tiết; thay vào đó, chúng tôi dẫn chiếu đến các hướng dẫn chuyên biệt tương ứng cho từng chủ đề.</p>
-
-<figure style="margin: 2rem auto;">
-    <img src="https://file.garden/aRcee0oeuCLsBw6X/esc%20hf%202026/01_linnk_ai_6Sfa_translated_vi-VN.png" alt="Hình ảnh minh họa trung tâm: Quản lý suy tim">
-    <figcaption class="image-caption">
-        <strong>Hình 1. Hình ảnh minh họa trung tâm: Quản lý suy tim.</strong> <span style="color: #707070; font-style: italic;"><strong>ACE-I:</strong> thuốc ức chế men chuyển angiotensin; <strong>AF:</strong> rung nhĩ; <strong>ARB:</strong> thuốc chẹn thụ thể angiotensin II; <strong>ARNI:</strong> thuốc ức chế thụ thể angiotensin–neprilysin; <strong>AS:</strong> hẹp van động mạch chủ; <strong>AV:</strong> nhĩ thất; <strong>CABG:</strong> phẫu thuật bắc cầu động mạch vành; <strong>CRT:</strong> liệu pháp tái đồng bộ tim; <strong>HF:</strong> suy tim; <strong>HFpEF:</strong> suy tim phân suất tống máu bảo tồn; <strong>HFrEF:</strong> suy tim phân suất tống máu giảm; <strong>HR:</strong> nhịp tim; <strong>ICD:</strong> máy khử rung tim cấy ghép; <strong>ISDN:</strong> isosorbide dinitrate; <strong>IV:</strong> tiêm/truyền tĩnh mạch; <strong>LVAD:</strong> thiết bị hỗ trợ thất trái; <strong>LVEF:</strong> phân suất tống máu thất trái; <strong>MCS:</strong> hỗ trợ tuần hoàn cơ học; <strong>MR:</strong> hở van hai lá; <strong>MRA:</strong> thuốc đối kháng thụ thể mineralocorticoid; <strong>TEER:</strong> sửa van mép-nối-mép qua ống thông; <strong>NYHA:</strong> Hiệp hội Tim mạch New York; <strong>SAVR:</strong> phẫu thuật thay van động mạch chủ; <strong>SGLT2-I:</strong> thuốc ức chế đồng vận chuyển Natri-glucose 2; <strong>SR:</strong> nhịp xoang; <strong>TAVI:</strong> thay van động mạch chủ qua ống thông.</span> Màu xanh lá cây biểu thị khuyến cáo Class I. Màu vàng biểu thị khuyến cáo Class IIa. Màu cam biểu thị khuyến cáo Class IIb. <sup>a</sup> Thuốc ARB được khuyến cáo ở bệnh nhân HFrEF có triệu chứng nếu họ không dung nạp với ACE-I hoặc ARNI. <sup>b</sup> Chưa có thử nghiệm ngẫu nhiên có đối chứng tiến cứu quy mô lớn nào được thực hiện về việc sử dụng thuốc chẹn beta, ACE-I/ARNI/ARB dành riêng cho các bệnh nhân có LVEF từ 41%–49%. <sup>c</sup> Phân loại khuyến cáo cho ICD có sự khác biệt tùy theo nguyên nhân do thiếu máu cục bộ hay không do thiếu máu cục bộ. <sup>d</sup> Phân loại khuyến cáo cho CRT có sự khác biệt tùy theo thời gian và hình dạng phức bộ QRS (xem Hình 10 và Bảng Khuyến cáo 7). <sup>e</sup> Các tiêu chuẩn đối với suy tim tiến triển được liệt kê trong Bảng 14. <sup>f</sup> Chỉ định và chống chỉ định đối với ghép tim được liệt kê trong Bảng 17. <sup>g</sup> Chỉ định và chống chỉ định đối với việc cấy ghép LVAD được liệt kê trong Bảng 16. <sup>h</sup> Chủ yếu là ngưng thở khi ngủ tắc nghẽn.
-    </figcaption>
-</figure>
-
-    <h3 id="2-1-what-is-new">2.1. Những điểm mới</h3>
-    <p>Trong Hướng dẫn năm 2026 của ESC về quản lý suy tim, một số khái niệm mới so với phiên bản năm 2021 đã được giới thiệu, bên cạnh các khuyến cáo được liệt kê dưới đây. Những thay đổi này sẽ có tác động đến một số khuyến cáo, đặc biệt là các phương pháp điều trị suy tim (HF) theo hướng dẫn, bởi vì chúng tôi đã thay đổi cách phân loại suy tim dựa trên phân suất tống máu thất trái (LVEF). Để biết thêm chi tiết về các khái niệm mới, xin xem Mục 3, 6, và 7. <strong>Bảng 4</strong> cung cấp cái nhìn tổng quan về các khái niệm mới. <strong>Bảng 5</strong> làm nổi bật các khuyến cáo mới, và <strong>Bảng 6</strong> trình bày các khuyến cáo đã được sửa đổi, bao gồm trong tài liệu này.</p>
-
-<!-- Bảng 4 -->
-<div class="table-wrapper">
-    <table class="rec-table" style="font-size: 14px; width: 100%;">
-        <caption style="font-size: 16px;"><strong>Bảng 4. Các khái niệm mới</strong></caption>
-        <thead>
-            <tr>
-                <th style="background-color: var(--brand) !important; color: #ffffff !important; text-align: center; vertical-align: middle;">Khái niệm mới</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Suy tim phân suất tống máu giảm (HFrEF) đã được mở rộng, bao gồm LVEF lên đến \( 50\% \)</td>
-            </tr>
-            <tr>
-                <td>Suy tim phân suất tống máu giảm nhẹ (HFmrEF) đã bị loại bỏ</td>
-            </tr>
-            <tr>
-                <td>Suy tim phân suất tống máu bảo tồn (HFpEF) bao gồm LVEF từ \( 50\% \) trở lên</td>
-            </tr>
-            <tr>
-                <td>Thuật ngữ Suy tim mất bù (Decompensated HF) thay thế cho Suy tim cấp (acute HF)</td>
-            </tr>
-            <tr>
-                <td>Các giai đoạn của suy tim (A–D) trải dài từ nhóm có yếu tố nguy cơ đến suy tim tiến triển đã được áp dụng</td>
-            </tr>
-            <tr>
-                <td>Các phân loại mới cho liệu pháp điều trị nội khoa và can thiệp đã được giới thiệu</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td style="font-size: 13px; color: #4a4a4a; text-align: justify; padding: 12px 15px; background-color: #f9f9f9; border-left: 4px solid #c0c0c0; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; line-height: 1.5;">
-                    <strong>HF:</strong> suy tim; <strong>HFmrEF:</strong> suy tim phân suất tống máu giảm nhẹ; <strong>HFpEF:</strong> suy tim phân suất tống máu bảo tồn; <strong>HFrEF:</strong> suy tim phân suất tống máu giảm; <strong>LVEF:</strong> phân suất tống máu thất trái.
-                </td>
-            </tr>
-        </tfoot>
-    </table>
-</div>
-
-<!-- Bảng 5 -->
-<div class="table-wrapper">
-    <table class="rec-table" style="font-size: 14px; width: 100%;">
-        <caption style="font-size: 16px;"><strong>Bảng 5 — Các khuyến cáo mới
-        </caption>
-        <thead>
-            <tr>
-                <th style="width: 80%; text-align: center; vertical-align: middle;">Khuyến cáo</th>
-                <th style="width: 10%; text-align: center; vertical-align: middle;" class="ws-nowrap">Class<sup>a</sup></th>
-                <th style="width: 10%; text-align: center; vertical-align: middle;" class="ws-nowrap">Mức độ<sup>b</sup></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="3" class="table-section-header">Dự phòng suy tim — Mục 4</td>
-            </tr>
-            <tr>
-                <td>Việc tư vấn về các thói quen sinh hoạt lành mạnh, bao gồm duy trì cân nặng hợp lý, áp dụng chế độ ăn uống cân bằng, tránh lối sống tĩnh tại, kiêng hút thuốc và không lạm dụng rượu bia, cũng như cảnh báo không sử dụng các chất gây nghiện như cocaine, amphetamine, và steroid đồng hóa, được khuyến cáo cho tất cả bệnh nhân suy tim giai đoạn A hoặc B nhằm giảm nguy cơ bệnh tiến triển.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc sử dụng thuốc đồng vận thụ thể GLP-1 (GLP-1 RA) ở bệnh nhân đái tháo đường tuýp 2 (T2DM) có kèm theo ít nhất một yếu tố nguy cơ tim mạch khác nhằm giảm rủi ro mắc suy tim hoặc tử vong do tim mạch.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-A ws-nowrap">A</td>
-            </tr>
-            <tr>
-                <td>Thuốc ức chế men chuyển (ACE-I) hoặc thuốc chẹn thụ thể angiotensin (ARB, nếu không dung nạp ACE-I) được khuyến cáo cho bệnh nhân suy tim giai đoạn B và có LVEF \( \le 40\% \) nhằm giảm nguy cơ nhập viện do suy tim (HFH) và tử vong.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-A ws-nowrap">A</td>
-            </tr>
-            <tr>
-                <td>Thuốc chẹn beta được khuyến cáo cho bệnh nhân suy tim giai đoạn B và có LVEF \( < 50\% \) để giảm nguy cơ HFH hoặc tử vong.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Eplerenone được khuyến cáo cho bệnh nhân sau nhồi máu cơ tim có LVEF \( \le 40\% \), kèm theo các dấu hiệu của suy tim hoặc đái tháo đường, nhằm giảm nguy cơ HFH hoặc tử vong.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="table-section-header">Chẩn đoán suy tim mạn tính — Mục 5</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo tiến hành xét nghiệm chẩn đoán ban đầu bằng phương pháp cố định miễn dịch (immunofixation) huyết thanh và nước tiểu, định lượng chuỗi nhẹ tự do trong huyết thanh, và xạ hình xương bằng DPD/PYP/HMDP ở những bệnh nhân suy tim bị nghi ngờ mắc bệnh amyloidosis tim (bệnh thoái hóa tinh bột).</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-B ws-nowrap">B</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo xét nghiệm di truyền ở những bệnh nhân thỏa mãn tiêu chuẩn chẩn đoán bệnh cơ tim trong các trường hợp xét nghiệm này giúp xác định chẩn đoán, tiên lượng, phân tầng điều trị, định hướng sinh sản cho bệnh nhân, hoặc khi nó hỗ trợ đánh giá di truyền theo phả hệ cho người thân – những người có thể cần được đưa vào chương trình theo dõi dài hạn.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc thực hiện chụp PET 18F-FDG trong quy trình chẩn đoán đối với bệnh nhân mắc bệnh cơ tim bị nghi ngờ có sarcoidosis tim.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc đánh giá lại tỷ lệ tạo nhịp thất phải (RV pacing) ở tất cả bệnh nhân đang sử dụng thiết bị điện tử cấy ghép tim (CIED) và mới khởi phát hoặc tiến triển nặng tình trạng HFrEF.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Sốc điện chuyển nhịp (Electrical cardioversion) như một công cụ chẩn đoán có thể được cân nhắc ở bệnh nhân rung nhĩ (AF) dai dẳng, khi còn do dự về lợi ích của việc phục hồi nhịp xoang đối với các triệu chứng hoặc để đánh giá sự cải thiện chức năng thất trái.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="table-section-header">Quản lý suy tim mạn tính — Mục 6</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo tăng liều điều trị nội khoa nền tảng (FMT) ít nhất 1-2 tuần một lần ở bệnh nhân suy tim, dựa trên hướng dẫn từ triệu chứng, dấu hiệu sinh tồn và kết quả xét nghiệm, để đạt được liều đích tối ưu đã được chứng minh hiệu quả trong các thử nghiệm lâm sàng ngẫu nhiên (RCT), nhằm giảm nguy cơ HFH hoặc tử vong.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo duy trì FMT ở mức liều dung nạp cao nhất cho tất cả bệnh nhân suy tim, bao gồm cả những người đã trở nên không có triệu chứng hoặc có sự cải thiện về LVEF, nhằm giảm thiểu rủi ro HFH và tử vong.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Có thể cân nhắc ngừng FMT từ từ dưới sự giám sát chặt chẽ về lâm sàng, xét nghiệm và hình ảnh học ở một nhóm đối tượng bệnh nhân chọn lọc cao: những người không có triệu chứng, có sự bình thường hóa hoàn toàn về chức năng, thể tích thất trái và nồng độ peptide lợi niệu sau khi đã được điều trị đặc hiệu các nguyên nhân gây suy tim có thể đảo ngược, nhằm đáp ứng nguyện vọng của bệnh nhân.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Có thể cân nhắc dùng ACE-I/ARB/ARNI ở bệnh nhân suy tim phân suất tống máu bảo tồn (HFpEF) có triệu chứng để giảm rủi ro nhập viện do suy tim (HFH).</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Có thể cân nhắc đồng thời khởi trị FMT và lên kế hoạch cấy ghép CRT ở bệnh nhân HFrEF có triệu chứng, kèm block nhánh trái (LBBB) với phức bộ QRS \( \ge 150 \text{ ms} \), và LVEF \( \le 35\% \) để cải thiện triệu chứng, giảm bệnh tật và tử vong; tuy nhiên, cần đánh giá lại LVEF trước khi tiến hành cấy ghép CRT.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="table-section-header">Suy tim mất bù — Mục 7</td>
-            </tr>
-            <tr>
-                <td>Liệu pháp lợi tiểu dưới sự hướng dẫn của nồng độ Na<sup>+</sup> niệu có thể được cân nhắc trong những ngày đầu điều trị bệnh nhân suy tim mất bù (DHF) để cải thiện tình trạng bài tiết natri và lợi niệu.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Khởi trị bằng SGLT2-I nội trú được khuyến cáo cho bệnh nhân mắc DHF sau khi tình trạng đã ổn định ban đầu, nhằm cải thiện chất lượng cuộc sống (QoL), giảm triệu chứng sung huyết và hạn chế rủi ro HFH.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Thành lập một Đội Phản ứng Sốc (Shock Team) đa chuyên khoa được khuyến cáo để đánh giá các ứng viên tiềm năng cho phương pháp hỗ trợ tuần hoàn cơ học (MCS) tạm thời, từ đó định hướng việc lựa chọn thiết bị (phương thức và loại hình) phù hợp với đặc điểm của bệnh nhân và tình trạng suy tim.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc sử dụng MCS tạm thời bằng bơm dòng trục siêu nhỏ (microaxial flow pump) ở những bệnh nhân chọn lọc bị sốc tim do nhồi máu cơ tim có ST chênh lên, kèm rối loạn chức năng tâm thu thất trái nhưng không có nguy cơ tổn thương não do thiếu oxy, nhằm giảm tỷ lệ tử vong.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc dùng MCS tạm thời ở những bệnh nhân gặp biến chứng cơ học liên quan đến nhồi máu cơ tim, xem như một "chiếc cầu nối" (bridge) cho đến khi có thể tiến hành điều trị dứt điểm.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Không khuyến cáo sử dụng MCS tạm thời thường quy ở những bệnh nhân không được chọn lọc kỹ mắc sốc tim do nhồi máu cơ tim cấp, do có nguy cơ gây hại.</td>
-                <td class="class-III ws-nowrap">III</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="table-section-header">Suy tim tiến triển — Mục 8</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo tham vấn sớm với trung tâm chuyên sâu về suy tim tiến triển đối với những bệnh nhân đang ở hoặc có nguy cơ rơi vào giai đoạn suy tim tiến triển, có động lực điều trị và không có chống chỉ định tuyệt đối đối với ghép tim hoặc MCS dài hạn, nhằm đánh giá khả năng phù hợp.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-A ws-nowrap">A</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc giảm liều hoặc ngừng sử dụng thuốc chẹn beta hoặc ivabradine ở một số bệnh nhân HFrEF tiến triển có bằng chứng giảm tưới máu cơ quan mặc dù đã được điều trị ban đầu, nhằm mục tiêu tăng cung lượng tim và cải thiện triệu chứng.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc thực hiện xét nghiệm mô bệnh học trên mô tim được lấy ra từ phẫu thuật cấy thiết bị hỗ trợ thất trái (LVAD) hoặc phẫu thuật ghép tim ở bệnh nhân suy tim không do thiếu máu cục bộ. Việc này giúp xác định chẩn đoán nguyên nhân bệnh sinh, mở ra khả năng điều trị đặc hiệu hoặc hỗ trợ tầm soát bệnh trong gia đình.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="table-section-header">Bệnh lý tim mạch đồng mắc — Mục 9</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc phương pháp triệt đốt nút nhĩ thất kết hợp với đặt CRT ở những bệnh nhân rung nhĩ vĩnh viễn có triệu chứng nặng, không kiểm soát được tần số tim tốt dù đã dùng thuốc, và từng có ít nhất một lần nhập viện do suy tim. Mục tiêu nhằm giảm triệu chứng, hạn chế rào cản thể chất, và giảm rủi ro nhập viện tái diễn cũng như tử vong.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Có thể cân nhắc tiêm tĩnh mạch amiodarone hoặc digoxin ở những bệnh nhân HFrEF kèm rung nhĩ có huyết động không ổn định, nhằm ổn định tình trạng bệnh nhân và kiểm soát tần số tim cấp thời.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="table-section-header">Bệnh lý ngoài tim mạch đồng mắc — Mục 10</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc chỉ định Semaglutide hoặc tirzepatide cho bệnh nhân suy tim có triệu chứng, LVEF \( \ge 45\% \) và chỉ số khối cơ thể (BMI) \( \ge 30 \text{ kg/m}^2 \), bất kể tình trạng đái tháo đường, để giảm cân nặng, nâng cao khả năng gắng sức và chất lượng cuộc sống.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Có thể cân nhắc phẫu thuật thu nhỏ dạ dày (Bariatric surgery) ở bệnh nhân suy tim béo phì có BMI \( \ge 35 \text{ kg/m}^2 \) nhằm giảm cân nếu việc thay đổi lối sống có cấu trúc lặp đi lặp lại kết hợp với thuốc giảm cân không mang lại hiệu quả duy trì giảm cân bền vững.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Có thể cân nhắc liệu pháp thông khí thích ứng (Adaptive servo-ventilation) ở bệnh nhân HFrEF bị rối loạn nhịp thở khi ngủ với ưu thế là ngưng thở khi ngủ do tắc nghẽn, nhằm cải thiện chất lượng giấc ngủ, chất lượng cuộc sống liên quan đến sức khỏe, và các triệu chứng.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc đánh giá định kỳ tình trạng lo âu, trầm cảm và suy yếu ở bệnh nhân suy tim. Điều này nhằm hỗ trợ xây dựng kế hoạch chăm sóc cá nhân hóa và nhận diện các yếu tố có thể dẫn đến kết cục bất lợi.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="table-section-header">Quản lý suy tim đa chuyên khoa — Mục 11</td>
-            </tr>
-            <tr>
-                <td>Việc tập luyện thể lực cá nhân hóa, nằm trong khuôn khổ phục hồi chức năng tim mạch đa chuyên khoa dựa trên tập luyện, được khuyến cáo cho tất cả bệnh nhân suy tim ổn định, trừ khi có chống chỉ định cụ thể, để tăng cường khả năng gắng sức, cải thiện QoL, và giảm rủi ro nhập viện do mọi nguyên nhân.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Tập luyện thể lực cá nhân hóa dài hạn ngoài chương trình phục hồi chức năng chuyên biệt cũng được khuyến cáo cho tất cả bệnh nhân ổn định, trừ phi có chống chỉ định, nhằm cải thiện năng lực gắng sức, chất lượng cuộc sống và giảm nguy cơ nhập viện vì mọi nguyên nhân.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-b2 ws-nowrap">B2</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo phục hồi chức năng tim mạch ở những bệnh nhân mang thiết bị LVAD để cải thiện năng lực chức năng và QoL.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc cho bệnh nhân DHF tham gia phục hồi chức năng tim mạch ngay khi điều kiện an toàn cho phép, nhằm cải thiện chức năng và QoL.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo chủ động thảo luận về quỹ đạo diễn tiến của bệnh, mục tiêu chăm sóc, và lên kế hoạch chăm sóc nâng cao ở những bệnh nhân suy tim tiến triển. Qua đó tạo thuận lợi cho giao tiếp về vấn đề cuối đời và chất lượng sống.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo bệnh nhân ở giai đoạn suy tim tiến triển tiếp cận với nhóm đa chuyên khoa chăm sóc giảm nhẹ suy tim tích hợp nhằm cải thiện chất lượng sống và giảm thiểu gánh nặng triệu chứng.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-b2 ws-nowrap">B2</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="table-section-header">Các tình trạng đặc biệt — Mục 12</td>
-            </tr>
-            <tr>
-                <td>Chăm sóc và tư vấn tiền thụ thai được khuyến cáo đối với bệnh nhân suy tim, nhằm tạo điều kiện ra quyết định liên quan đến điều trị bệnh, mang thai, tránh thai, sàng lọc di truyền tiền làm tổ và các liệu pháp hỗ trợ sinh sản.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Ở phụ nữ mang thai mắc HFrEF, khuyến cáo chuyển từ thuốc chẹn beta không chọn lọc sang thuốc chẹn beta 1 chọn lọc (metoprolol, bisoprolol). Đồng thời, cần giám sát chặt chẽ cả mẹ và thai nhi để hạn chế tối đa nguy cơ xảy ra biến cố bất lợi cho thai kỳ cũng như tình trạng sinh non nhẹ cân.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Không khuyến cáo sử dụng ACE-I, ARB, ARNI, MRA, ivabradine, và SGLT2-I trong thời kỳ mang thai vì nguy cơ gây độc tính hoặc dị tật bẩm sinh cho thai nhi.</td>
-                <td class="class-III ws-nowrap">III</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="3" style="font-size: 13px; color: #4a4a4a; text-align: justify; padding: 12px 15px; background-color: #f9f9f9; border-left: 4px solid #c0c0c0; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; line-height: 1.5;">
-                    <strong>18F-FDG-PET:</strong> chụp cắt lớp phát xạ positron bằng 18F-fluorodeoxyglucose; <strong>ACE-I:</strong> thuốc ức chế men chuyển; <strong>AF:</strong> rung nhĩ; <strong>ARB:</strong> thuốc chẹn thụ thể angiotensin II; <strong>ARNI:</strong> thuốc ức chế thụ thể angiotensin–neprilysin; <strong>BMI:</strong> chỉ số khối cơ thể; <strong>CIED:</strong> thiết bị điện tử cấy ghép tim; <strong>CRT:</strong> liệu pháp tái đồng bộ tim; <strong>DHF:</strong> suy tim mất bù; <strong>DPD:</strong> 3,3-diphosphono-1,2-propanodicarboxylic acid; <strong>FMT:</strong> điều trị nội khoa nền tảng; <strong>GLP-1 RA:</strong> thuốc đồng vận thụ thể glucagon-like peptide-1; <strong>HF:</strong> suy tim; <strong>HFH:</strong> nhập viện do suy tim; <strong>HFpEF:</strong> suy tim phân suất tống máu bảo tồn; <strong>HFrEF:</strong> suy tim phân suất tống máu giảm; <strong>HMDP:</strong> hydroxymethylene diphosphonate; <strong>LBBB:</strong> block nhánh trái; <strong>LVAD:</strong> thiết bị hỗ trợ thất trái; <strong>LVEF:</strong> phân suất tống máu thất trái; <strong>MCS:</strong> hỗ trợ tuần hoàn cơ học; <strong>MRA:</strong> thuốc đối kháng thụ thể khoáng corticoid; <strong>PYP:</strong> pyrophosphate; <strong>QoL:</strong> chất lượng cuộc sống; <strong>RCT:</strong> thử nghiệm đối chứng ngẫu nhiên; <strong>RV:</strong> thất phải; <strong>SGLT2-I:</strong> thuốc ức chế đồng vận chuyển natri–glucose 2; <strong>T2DM:</strong> đái tháo đường tuýp 2.<br>
-                    <sup>a</sup> Class of recommendation (Mức độ khuyến cáo).<br>
-                    <sup>b</sup> Level of evidence (Cấp độ bằng chứng).
-                </td>
-            </tr>
-        </tfoot>
-    </table>
-</div>
-
-<!-- Bảng 6 -->
-<div class="table-wrapper">
-    <table class="rec-table" style="font-size: 14px; width: 100%;">
-        <caption style="font-size: 16px;"><strong>
-            <span style="color: #b30000;">Bảng 6</span> — Các khuyến cáo đã được sửa đổi
-        </caption>
-        <thead>
-            <tr>
-                <th style="width: 35%; text-align: center; vertical-align: middle;">Các khuyến cáo trong phiên bản 2021</th>
-                <th style="width: 7%; text-align: center; vertical-align: middle;" class="ws-nowrap">Class<sup>a</sup></th>
-                <th style="width: 8%; text-align: center; vertical-align: middle;" class="ws-nowrap">Mức độ<sup>b</sup></th>
-                <th style="width: 35%; text-align: center; vertical-align: middle;">Các khuyến cáo trong phiên bản 2026</th>
-                <th style="width: 7%; text-align: center; vertical-align: middle;" class="ws-nowrap">Class<sup>a</sup></th>
-                <th style="width: 8%; text-align: center; vertical-align: middle;" class="ws-nowrap">Mức độ<sup>b</sup></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="6" class="table-section-header">Dự phòng suy tim — Mục 4</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo điều trị tăng huyết áp để dự phòng hoặc làm chậm sự khởi phát của suy tim, và ngăn ngừa các ca nhập viện do suy tim.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-A ws-nowrap">A</td>
-                <td>Khuyến cáo kiểm soát huyết áp nghiêm ngặt (mục tiêu huyết áp tâm thu \( < 130 \text{ mmHg} \)) ở bệnh nhân tăng huyết áp hoặc suy tim giai đoạn B để giảm rủi ro tiến triển suy tim.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-A ws-nowrap">A</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="table-section-header">Chẩn đoán suy tim mạn tính — Mục 5</td>
-            </tr>
-<tr>
-                <td>Cộng hưởng từ tim (CMR) được khuyến cáo để đánh giá cấu trúc và chức năng cơ tim ở những người có hình ảnh siêu âm qua cửa sổ âm thanh kém.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-                <td rowspan="3">Khuyến cáo chụp CMR có thuốc cản từ (Contrast-enhanced CMR) ở bệnh nhân nghi ngờ mắc bệnh cơ tim, hoặc khi nguyên nhân gốc rễ gây suy tim chưa rõ ràng, nếu việc chẩn đoán chi tiết hơn có khả năng mang lại giá trị thiết thực trong chăm sóc bệnh nhân.</td>
-                <td rowspan="3" class="class-I ws-nowrap">I</td>
-                <td rowspan="3" class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>CMR được khuyến cáo để mô tả đặc tính mô cơ tim ở những bệnh nhân nghi ngờ mắc bệnh lý thâm nhiễm, bệnh Fabry, bệnh lý viêm (viêm cơ tim), cơ tim thất trái không lèn chặt, amyloidosis, sarcoidosis, quá tải sắt/hemochromatosis.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc chụp CMR có ngấm thuốc muộn (LGE) trong bệnh cơ tim giãn (DCM) để phân biệt giữa tổn thương cơ tim do thiếu máu cục bộ và không do thiếu máu cục bộ.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>            <tr>
-                <td>Khuyến cáo chụp mạch vành xâm lấn ở những bệnh nhân bị đau thắt ngực mặc dù đã điều trị bằng thuốc hoặc có rối loạn nhịp thất triệu chứng.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td>Khuyến cáo chụp mạch vành xâm lấn ở bệnh nhân suy tim, có cơn đau thắt ngực, và có xác suất cao mắc bệnh động mạch vành (CAD) tắc nghẽn, những người này được xem là ứng viên tiềm năng cho can thiệp tái tưới máu.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Có thể cân nhắc chụp mạch vành xâm lấn ở những bệnh nhân HFrEF có xác suất tiền test ở mức trung bình đến cao về CAD và có bằng chứng thiếu máu cục bộ trong các bài kiểm tra gắng sức không xâm lấn.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td>Nên cân nhắc chụp mạch vành xâm lấn ở bệnh nhân HFrEF có khả năng tiền test cao mắc CAD tắc nghẽn, sau khi đã cân nhắc kỹ lưỡng tỷ lệ rủi ro - lợi ích của thủ thuật và các chiến lược tái tưới máu tiềm năng.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="table-section-header">Quản lý suy tim mạn tính — Mục 6</td>
-            </tr>
-            <tr>
-                <td>Một thuốc MRA được khuyến cáo cho bệnh nhân HFrEF để giảm rủi ro nhập viện do suy tim và tử vong.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-A ws-nowrap">A</td>
-                <td rowspan="2">Khuyến cáo sử dụng một thuốc MRA (loại sMRA cho HFrEF và sMRA/nsMRA cho HFpEF) ở bệnh nhân suy tim có triệu chứng, bất kể mức LVEF, nhằm giảm thiểu rủi ro nhập viện do suy tim (HFH) hoặc tử vong do biến cố tim mạch.</td>
-                <td rowspan="2" class="class-I ws-nowrap">I</td>
-                <td rowspan="2" class="level-A ws-nowrap">A</td>
-            </tr>
-            <tr>
-                <td>Có thể cân nhắc dùng một thuốc MRA cho bệnh nhân HFmrEF để giảm nguy cơ nhập viện do suy tim và tử vong.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Có thể cân nhắc chỉ định Digoxin cho bệnh nhân HFrEF có triệu chứng duy trì nhịp xoang mặc dù đã được điều trị bằng ACE-I (hoặc ARNI), chẹn beta và MRA, nhằm giảm rủi ro nhập viện (bao gồm cả nhập viện vì mọi nguyên nhân và vì suy tim).</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td>Nên cân nhắc sử dụng một dẫn xuất glycoside trợ tim (digoxin hoặc digitoxin) ở bệnh nhân HFrEF có triệu chứng với LVEF \( \le 40\% \), dù đã áp dụng FMT tối ưu, để hạn chế nguy cơ nhập viện do suy tim (HFH).</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Có thể cân nhắc sử dụng Vericiguat cho bệnh nhân thuộc nhóm NYHA II–IV có tình trạng suy tim tăng nặng dù đã dùng ACE-I (hoặc ARNI), chẹn beta và MRA, để giảm nguy cơ tử vong tim mạch và nhập viện do suy tim. <em>[Ở bệnh nhân HFrEF theo phân loại năm 2021.]</em></td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td>Có thể cân nhắc sử dụng Vericiguat ở bệnh nhân HFrEF có triệu chứng với LVEF \( < 45\% \) mặc dù đã được điều trị bằng FMT tối ưu, nhằm giảm tỷ lệ nhập viện do suy tim (HFH) và tử vong do tim mạch.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo sử dụng CRT thay vì tạo nhịp thất phải (RV pacing) đối với những bệnh nhân HFrEF có chỉ định tạo nhịp thất do block nhĩ thất độ cao, bất kể phân độ NYHA hoặc độ rộng của phức bộ QRS, nhằm giảm thiểu bệnh tật. Khuyến cáo này bao gồm cả những bệnh nhân bị rung nhĩ (AF).</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-A ws-nowrap">A</td>
-                <td>Nên cân nhắc sử dụng CRT thay vì tạo nhịp thất phải đối với bệnh nhân HFrEF có chỉ định tạo nhịp thất do block nhĩ thất độ cao, bất kể phân độ NYHA hoặc độ rộng của QRS, để kéo giảm nguy cơ HFH và tử vong.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="table-section-header">Suy tim mất bù — Mục 7</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc kết hợp lợi tiểu quai (loop diuretic) với lợi tiểu nhóm thiazide ở những bệnh nhân bị phù kháng trị không đáp ứng với việc tăng liều lợi tiểu quai.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td>Nên cân nhắc bổ sung acetazolamide tiêm tĩnh mạch hoặc hydrochlorothiazide đường uống trong thời gian ngắn ở những bệnh nhân quá tải thể tích đã từng được điều trị bằng lợi tiểu quai trước đó, để giảm tình trạng sung huyết.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Bóng đối xung nội động mạch chủ (IABP) không được khuyến cáo thường quy ở bệnh nhân sốc tim sau nhồi máu cơ tim.</td>
-                <td class="class-III ws-nowrap">III</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td>Không khuyến cáo dùng IABP ở những bệnh nhân sốc tim không được chọn lọc đặc biệt, do thiếu minh chứng về hiệu quả.</td>
-                <td class="class-III ws-nowrap">III</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc dùng MCS ngắn hạn ở bệnh nhân sốc tim như một liệu pháp BTR (cầu nối đến phục hồi), BTD (cầu nối ra quyết định), BTB (cầu nối đến cầu nối). Các chỉ định xa hơn bao gồm điều trị nguyên nhân gốc rễ gây sốc tim, hoặc sử dụng MCS dài hạn, hoặc ghép tim.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-                <td>Nên cân nhắc dùng MCS tạm thời ở nhóm bệnh nhân chọn lọc có tình trạng huyết động không ổn định liên quan đến suy tim, đóng vai trò như BTR, BTD, BTB, BTC (cầu nối đến khi đủ điều kiện), hoặc BTT (cầu nối đến ghép tim).</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="table-section-header">Suy tim tiến triển — Mục 8</td>
-            </tr>
-            <tr>
-                <td>Có thể cân nhắc truyền thuốc tăng co bóp cơ tim (inotropes) và/hoặc thuốc vận mạch liên tục ở những bệnh nhân cung lượng tim thấp, có dấu hiệu giảm tưới máu cơ quan, đóng vai trò như cầu nối đến MCS hoặc ghép tim.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-C ws-nowrap">C</td>
-                <td>Nên cân nhắc truyền thuốc tăng co bóp liên tục ở những bệnh nhân mắc HFrEF tiến triển, cung lượng tim thấp và có bằng chứng giảm tưới máu hoặc rối loạn chức năng cơ quan đích, đóng vai trò như BTD, BTT, hoặc cầu nối dẫn đến MCS dài hạn, nhằm cải thiện cung lượng tim và thuyên giảm triệu chứng.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc sử dụng MCS dài hạn cho bệnh nhân mắc HFrEF tiến triển mặc dù đã được điều trị bằng thuốc và thiết bị tối ưu, không đủ điều kiện ghép tim hoặc các phương pháp phẫu thuật khác, và không kèm suy giảm chức năng thất phải trầm trọng, để giảm nguy cơ tử vong và cải thiện triệu chứng.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-A ws-nowrap">A</td>
-                <td rowspan="2">Khuyến cáo chỉ định MCS dài hạn (LVAD) cho các đối tượng bệnh nhân chọn lọc mắc HFrEF tiến triển dù đã dùng FMT và GDIT, đóng vai trò như BTT, BTC, BTR, hoặc như một liệu pháp đích (destination therapy) nhằm cải thiện triệu chứng và ngăn chặn nguy cơ tử vong.</td>
-                <td rowspan="2" class="class-I ws-nowrap">I</td>
-                <td rowspan="2" class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc dùng MCS dài hạn ở bệnh nhân HFrEF tiến triển không đáp ứng với các phương pháp điều trị bằng thuốc và thiết bị y tế tối ưu, coi như cầu nối đến ca ghép tim để giảm triệu chứng, giảm nguy cơ nhập viện và nguy cơ tử vong sớm.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-B ws-nowrap">B</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="table-section-header">Bệnh lý tim mạch đồng mắc — Mục 9</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc dùng thuốc chẹn beta để kiểm soát tần số tim trong ngắn hạn và dài hạn ở bệnh nhân suy tim có kèm rung nhĩ (AF).</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td>Thuốc chẹn beta được khuyến cáo như liệu pháp hàng đầu (first-line) ở bệnh nhân HFrEF kèm rung nhĩ đã ổn định, giúp kiểm soát tần số tim trong ngắn hạn và dài hạn.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Trong những trường hợp có mối liên hệ rõ ràng giữa tình trạng rung nhĩ (AF kịch phát hoặc dai dẳng) và sự tăng nặng triệu chứng suy tim, dai dẳng bất chấp các biện pháp điều trị nội khoa, nên cân nhắc triệt đốt qua đường ống thông (catheter ablation) để phòng ngừa hoặc điều trị AF.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td>Nên cân nhắc thực hiện triệt đốt qua đường ống thông để điều trị AF ở một số bệnh nhân chọn lọc mắc AF có triệu chứng và HFrEF, nhằm nâng cao QoL và giảm nguy cơ tử vong hoặc nhập viện do suy tim (HFH).</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc can thiệp tái tưới máu mạch vành nhằm thuyên giảm triệu chứng đau thắt ngực dai dẳng (hoặc các tình trạng tương đương đau thắt ngực) ở bệnh nhân HFrEF, hội chứng động mạch vành mạn tính (CCS) và có giải phẫu động mạch vành phù hợp cho tái tưới máu, mặc dù đã áp dụng liệu pháp điều trị nội khoa tối ưu (OMT) bao gồm cả thuốc chống đau thắt ngực.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-C ws-nowrap">C</td>
-                <td>Khuyến cáo can thiệp tái tưới máu mạch vành ở bệnh nhân suy tim, kèm theo bệnh động mạch vành (CAD) tắc nghẽn và đau thắt ngực dai dẳng dù đã được điều trị bằng FMT cho suy tim và thuốc chống đau thắt ngực, nhằm giảm bớt triệu chứng.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-C ws-nowrap">C</td>
-            </tr>
-            <tr>
-                <td>Can thiệp van động mạch chủ, bao gồm thay van qua đường ống thông (TAVI) hoặc phẫu thuật thay van (SAVR), được khuyến cáo cho bệnh nhân suy tim mắc hẹp van động mạch chủ độ chênh áp cao và nghiêm trọng, để cải thiện tiên lượng sống còn và triệu chứng.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td>Can thiệp thay van động mạch chủ bằng SAVR hoặc TAVI được khuyến cáo cho bệnh nhân hẹp van động mạch chủ nghiêm trọng kèm theo suy tim, giúp thuyên giảm triệu chứng và tránh tử vong.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td>Nên cân nhắc thủ thuật sửa van hai lá gắp mép qua đường ống thông (edge-to-edge repair) ở nhóm bệnh nhân chọn lọc kỹ càng, mắc hở van hai lá thứ phát, không đủ điều kiện phẫu thuật hoặc không cần can thiệp tái tưới máu mạch vành, vẫn còn triệu chứng nặng dù đã dùng OMT, và thỏa mãn các tiêu chí giúp giảm tỷ lệ nhập viện do suy tim.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td>Khuyến cáo sửa van hai lá gắp mép qua đường ống thông ở bệnh nhân có huyết động ổn định, mắc HFrEF có triệu chứng và hở van hai lá thứ phát nghiêm trọng dai dẳng, bất chấp điều trị FMT tối ưu và CRT nếu có chỉ định, thỏa mãn các tiêu chuẩn lâm sàng và siêu âm tim cụ thể, nhằm giảm nguy cơ HFH và tăng cường QoL.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="table-section-header">Quản lý đa chuyên khoa — Mục 11</td>
-            </tr>
-            <tr>
-                <td>Việc giám sát áp lực động mạch phổi bằng hệ thống theo dõi huyết động không dây có thể được cân nhắc ở bệnh nhân suy tim có triệu chứng, nhằm mục đích cải thiện các kết cục lâm sàng.</td>
-                <td class="class-IIb ws-nowrap">IIb</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td>Nên cân nhắc sử dụng hệ thống giám sát huyết động từ xa qua áp lực động mạch phổi (PA) ở những bệnh nhân suy tim có triệu chứng, phân độ NYHA III và có tiền sử nhập viện vì suy tim (HFH) trong vòng 12 tháng qua, để giảm nguy cơ tái nhập viện.</td>
-                <td class="class-IIa ws-nowrap">IIa</td>
-                <td class="level-b1 ws-nowrap">B1</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="table-section-header">Các tình trạng đặc biệt — Mục 12</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo sử dụng Tafamidis ở những bệnh nhân được chẩn đoán xác định thông qua xét nghiệm di truyền mắc bệnh amyloidosis tim do đột biến gen transthyretin (hTTR-CA) và có triệu chứng NYHA độ I hoặc II, nhằm giảm thiểu triệu chứng, tỷ lệ nhập viện do tim mạch và tử vong.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-B ws-nowrap">B</td>
-                <td rowspan="2">Khuyến cáo điều trị bằng thuốc làm "bất hoạt" gene TTR (như vutrisiran) hoặc thuốc ổn định TTR (tafamidis hoặc acoramidis) đối với bệnh nhân mắc amyloidosis tim di truyền hoặc thể nguyên bản (wild-type) có triệu chứng NYHA từ I đến III, để ngăn chặn sự tiến triển của triệu chứng, giảm nguy cơ nhập viện vì bệnh lý tim mạch và tử vong do mọi nguyên nhân.</td>
-                <td rowspan="2" class="class-I ws-nowrap">I</td>
-                <td rowspan="2" class="level-A ws-nowrap">A</td>
-            </tr>
-            <tr>
-                <td>Khuyến cáo sử dụng Tafamidis ở bệnh nhân mắc bệnh amyloidosis tim transthyretin thể nguyên bản (wtTTR-CA) có triệu chứng NYHA I hoặc II để giảm nhẹ triệu chứng, nhập viện vì tim mạch và tỷ lệ tử vong.</td>
-                <td class="class-I ws-nowrap">I</td>
-                <td class="level-B ws-nowrap">B</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="6" style="font-size: 13px; color: #4a4a4a; text-align: justify; padding: 12px 15px; background-color: #f9f9f9; border-left: 4px solid #c0c0c0; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; line-height: 1.5;">
-                    <strong>ACE-I:</strong> thuốc ức chế men chuyển; <strong>AF:</strong> rung nhĩ; <strong>ARNI:</strong> thuốc ức chế thụ thể angiotensin–neprilysin; <strong>AV:</strong> nhĩ thất; <strong>BTC:</strong> cầu nối đến lúc đủ điều kiện; <strong>BTD:</strong> cầu nối đến khi ra quyết định; <strong>BTR:</strong> cầu nối đến khi phục hồi; <strong>BTT:</strong> cầu nối đến khi ghép tim; <strong>CAD:</strong> bệnh động mạch vành; <strong>CCS:</strong> hội chứng động mạch vành mạn tính; <strong>CMR:</strong> cộng hưởng từ tim; <strong>CRT:</strong> liệu pháp tái đồng bộ tim; <strong>CV:</strong> tim mạch; <strong>DCM:</strong> bệnh cơ tim giãn; <strong>FMT:</strong> điều trị nội khoa nền tảng; <strong>HF:</strong> suy tim; <strong>HFH:</strong> nhập viện do suy tim; <strong>HFmrEF:</strong> suy tim phân suất tống máu giảm nhẹ; <strong>HFpEF:</strong> suy tim phân suất tống máu bảo tồn; <strong>HFrEF:</strong> suy tim phân suất tống máu giảm; <strong>hTTR-CA:</strong> bệnh amyloidosis tim do đột biến gen transthyretin di truyền; <strong>IABP:</strong> bóng đối xung nội động mạch chủ; <strong>LGE:</strong> ngấm thuốc đối quang từ muộn; <strong>LV:</strong> thất trái; <strong>LVAD:</strong> thiết bị hỗ trợ thất trái; <strong>LVEF:</strong> phân suất tống máu thất trái; <strong>MCS:</strong> hỗ trợ tuần hoàn cơ học; <strong>MI:</strong> nhồi máu cơ tim; <strong>MRA:</strong> thuốc đối kháng thụ thể khoáng corticoid; <strong>MT:</strong> điều trị nội khoa; <strong>nsMRA:</strong> thuốc đối kháng thụ thể khoáng corticoid không chứa steroid; <strong>NYHA:</strong> Hiệp hội Tim mạch New York; <strong>OMT:</strong> điều trị nội khoa tối ưu; <strong>PA:</strong> động mạch phổi; <strong>QoL:</strong> chất lượng cuộc sống; <strong>RV:</strong> thất phải; <strong>SAVR:</strong> phẫu thuật thay van động mạch chủ; <strong>sMRA:</strong> thuốc đối kháng thụ thể khoáng corticoid chứa steroid; <strong>TAVI:</strong> thay van động mạch chủ qua đường ống thông; <strong>TTR:</strong> transthyretin; <strong>wtTTR-CA:</strong> bệnh amyloidosis tim transthyretin thể nguyên bản.<br>
-                    <sup>a</sup> Class of recommendation (Mức độ khuyến cáo).<br>
-                    <sup>b</sup> Level of evidence (Cấp độ bằng chứng).
-                </td>
-            </tr>
-        </tfoot>
-    </table>
-</div>
-    <h2 id="3-definition-epidemiology-and-classifications">3. Định nghĩa, dịch tễ học, và phân loại</h2>
-
-    <h3 id="3-1-definition-of-heart-failure">3.1. Định nghĩa suy tim</h3>
-    <p>Suy tim là một hội chứng lâm sàng bao gồm các triệu chứng và/hoặc dấu hiệu gây ra bởi những bất thường về cấu trúc và/hoặc chức năng của tim, dẫn đến áp lực trong buồng tim tăng cao và/hoặc cung lượng tim không đủ đáp ứng nhu cầu ngay cả khi nghỉ ngơi hay khi gắng sức.<sup>11</sup> Bên cạnh các triệu chứng chủ quan của suy tim, để xác định chẩn đoán, cần dựa vào các bằng chứng khách quan trên lâm sàng về tình trạng sung huyết phổi và/hoặc sung huyết hệ thống do tim, cùng các xét nghiệm hỗ trợ chẩn đoán (xem Mục 5).<sup>11</sup></p>
-    <p>Những người đang ở giai đoạn không có triệu chứng không được gộp chung vào định nghĩa suy tim nêu trên. Các cá nhân này được xác định là thuộc nhóm có nguy cơ mắc suy tim (giai đoạn A) hoặc tiền suy tim (giai đoạn B) (xem Mục 3.3).</p>
-    <p>Định nghĩa suy tim không bao hàm việc nhận diện căn nguyên của tình trạng rối loạn chức năng tim tiềm ẩn, dẫu cho việc xác định nguyên nhân đóng vai trò trọng yếu trên lâm sàng, bởi bệnh lý đặc thù có thể là yếu tố quyết định phương pháp điều trị cũng như tiên lượng bệnh sau đó. Các xét nghiệm chuyên biệt cần thiết để truy tìm nguyên nhân cốt lõi được trình bày cụ thể trong Mục 5.</p>
-
-    <h3 id="3-2-epidemiology-of-heart-failure">3.2. Dịch tễ học bệnh suy tim</h3>
-    <p>Tỷ lệ mắc suy tim (prevalence) ước tính dao động từ 1% đến 3% trong cộng đồng người trưởng thành, đi kèm với sự khác biệt đáng kể về mặt địa lý, độ tuổi và giới tính.</p>
-    <p>Cả tỷ lệ mắc mới (incidence) và tỷ lệ hiện mắc (prevalence) của suy tim đều gia tăng theo tuổi tác và gánh nặng của các yếu tố nguy cơ. Sự dao động này phụ thuộc nhiều vào quần thể bệnh nhân, bối cảnh nghiên cứu và các tiêu chuẩn chẩn đoán được áp dụng.<sup>14</sup> Bên cạnh đó, một loạt các yếu tố khác như trình độ học vấn, thu nhập, tình trạng nghèo đói tại khu dân cư, khí hậu, và mức độ ô nhiễm không khí cũng chi phối nguy cơ mắc suy tim, góp phần tạo nên bức tranh dịch tễ học đa dạng trên toàn cầu.<sup>13</sup></p>
-    <p>Ở các quốc gia châu Âu, ước tính tỷ lệ hiện mắc hiện tại nằm trong khoảng từ 12 đến 58 ca trên 1000 dân.<sup>15</sup></p>
-    <p>Do quy mô của nhóm người cao tuổi đang ngày một phình to tại các quốc gia phương Tây, tỷ lệ mắc mới thô (crude incidence) của suy tim đang có xu hướng gia tăng, hiện ở mức 2–13 ca trên 1000 người-năm tại châu Âu (dao động từ \( < 1 \) ca trên 1000 người-năm đối với những người từ 45–54 tuổi, lên đến \( > 12 \) ca trên 1000 người-năm ở những người \( > 74 \) tuổi).<sup>16,17</sup> Dù vậy, khi đã hiệu chỉnh theo độ tuổi, tỷ lệ mắc mới suy tim thực chất lại giảm dần trong suốt ba thập kỷ qua, rất có thể là thành quả của việc kiểm soát yếu tố nguy cơ và điều trị các bệnh lý tim mạch (CV) ngày một tốt hơn.<sup>15,17,18</sup> Trong khi đó, ở nhóm người trưởng thành trẻ tuổi, tỷ lệ mắc mới suy tim dường như đang có chiều hướng gia tăng hoặc chững lại. Có một vài lời giải thích tiềm năng cho thực trạng này, bao gồm (i) gánh nặng yếu tố nguy cơ tim mạch ngày càng trầm trọng, (ii) số lượng bệnh nhân tim bẩm sinh sống sót đến độ tuổi trưởng thành ngày càng đông, và (iii) sự thay đổi trong các mô hình giám sát y tế.<sup>16,19,20</sup> Thêm vào đó, tỷ lệ tử vong do suy tim đã được cải thiện, và chính điều này đã đẩy tỷ lệ hiện mắc suy tim lên cao hơn.<sup>13</sup></p>
-
-    <h4 id="3-2-1-epidemiology-of-heart-failure-phenotypes">3.2.1. Dịch tễ học theo kiểu hình suy tim</h4>
-    <p>Trong các mẫu nghiên cứu lấy từ cộng đồng, suy tim phân suất tống máu bảo tồn (HFpEF) chiếm gần một nửa tổng số ca bệnh, và tỷ lệ này có khả năng sẽ tiếp tục tăng do sự tiến bộ trong điều trị bệnh động mạch vành (CAD) cùng với sự bùng nổ của bệnh tăng huyết áp, béo phì, và các yếu tố nguy cơ HFpEF khác.<sup>21</sup> Bệnh nhân HFpEF thường lớn tuổi hơn và phần lớn là nữ giới. Sổ bộ HF của Thụy Điển đã ghi nhận độ tuổi khởi phát trung bình của HFpEF là 77 tuổi, trong đó nữ giới chiếm 55%.<sup>22</sup> Ngược lại, đối với nhóm bệnh nhân suy tim phân suất tống máu giảm (HFrEF), tỷ lệ nam giới lên tới 71% và độ tuổi khởi phát trung bình là 72 tuổi.<sup>22</sup> Nhiều phân nhóm của HFpEF đã được đề xuất. Ở một số khu vực, có tới 50% bệnh nhân thuộc phân nhóm chuyển hóa/béo phì nổi trội [trẻ tuổi hơn, chỉ số khối cơ thể (BMI) cao hơn]; trong khi tại một số khu vực khác, lên đến 50% bệnh nhân lại mang đặc trưng của phân nhóm lão hóa, mạch máu nổi trội [lớn tuổi hơn, thành động mạch cứng, tỷ lệ hiện mắc bệnh thận mạn (CKD) cao].<sup>23,24</sup></p>
-    <p>Suy tim phân suất tống máu giảm (HFrEF) thường được chia thành nguyên nhân do thiếu máu cục bộ hoặc không do thiếu máu cục bộ, với khoảng một nửa số trường hợp được nhận định là có nguồn gốc từ thiếu máu cục bộ.</p>
-
-    <h4 id="3-2-2-natural-history-and-prognosis">3.2.2. Diễn tiến tự nhiên và tiên lượng bệnh</h4>
-    <p>Mặc dù tỷ lệ tử vong tính từ thời điểm khởi phát suy tim đã ghi nhận nhiều bước tiến đáng kể trong suốt ba thập kỷ qua, tỷ lệ sinh tồn tổng thể sau 5 năm vẫn dừng lại ở mức \( < 60\% \).<sup>25,26</sup> Đối với đối tượng bệnh nhân trẻ, dữ liệu từ Đan Mạch cho thấy tuổi thọ đã được cải thiện dưới các phác đồ quản lý bệnh đương đại; cụ thể, tỷ lệ tử vong sau 5 năm hiện tại là 15% đối với nhóm \( < 65 \) tuổi, và 39% đối với nhóm từ 65–79 tuổi.<sup>25</sup> Những chuyển biến tích cực về mặt tử vong cũng được quan sát thấy ở nhóm bệnh nhân \( \ge 80 \) tuổi, tuy nhiên mức độ cải thiện không thực sự rõ rệt như ở nhóm người trẻ. Điều này phần nào được lý giải bởi gánh nặng bệnh lý đồng mắc nặng nề hơn và tỷ trọng tử vong không do nguyên nhân tim mạch cao hơn ở nhóm người cao tuổi.<sup>17,25,27</sup> Tỷ lệ tử vong trong nhóm HFpEF có thể thấp hơn đôi chút so với HFrEF, nhưng nhìn chung sự khác biệt này là không đáng kể bởi bệnh nhân HFpEF thường lớn tuổi hơn rất nhiều, và nguy cơ nhập viện ở hai nhóm là tương đương nhau.<sup>28,29</sup> Những bệnh nhân được chẩn đoán mắc suy tim trong bối cảnh khám ngoại trú thường có tiên lượng khả quan hơn so với những người bị phát hiện bệnh trong đợt nhập viện do suy tim (HFH). Đặc biệt, nhóm bệnh nhân phải nhập viện tái diễn vì suy tim luôn phải đối mặt với nguy cơ tử vong vô cùng cao.<sup>30,31</sup></p>
-    <p>Gánh nặng tổng thể do suy tim cũng như tình trạng nhập viện vì suy tim được dự báo sẽ tiếp tục leo thang trong vài thập kỷ tới. Nguyên nhân xuất phát từ tỷ lệ sống sót cao hơn, xu hướng già hóa dân số, cùng với sự phổ biến ngày càng tăng của các yếu tố nguy cơ và tình trạng béo phì ở nhóm người trẻ tuổi.</p>
-
-    <h3 id="3-3-classifications">3.3. Phân loại</h3>
-
-    <h4 id="3-3-1-classification-based-on-left-ventricular-ejection-fraction">3.3.1. Phân loại dựa trên phân suất tống máu thất trái</h4>
-    <p>Từ trước đến nay, suy tim luôn được chia thành các kiểu hình riêng biệt dựa vào kết quả đo lường LVEF. Trong <em>Hướng dẫn năm 2021 của ESC về chẩn đoán và điều trị suy tim cấp và mạn tính</em>, ba kiểu hình suy tim (HF) khác nhau đã được xác định: HFrEF (\( \text{LVEF} \le 40\% \)); suy tim phân suất tống máu giảm nhẹ (HFmrEF, LVEF từ 41%–49%); và HFpEF (\( \text{LVEF} \ge 50\% \)).<sup>3</sup> Nền tảng của hệ thống phân loại này bắt nguồn từ các tiêu chí nhận bệnh trong các thử nghiệm lâm sàng chuyên đánh giá những liệu pháp giúp cải thiện kết cục ở bệnh nhân HF và có \( \text{LVEF} \le 40\% \). Sự xuất hiện của kiểu hình HFmrEF vốn nhằm mục đích thu hút sự chú ý vào nhóm bệnh nhân thường xuyên bị bỏ qua trong các thử nghiệm về HFrEF. Danh pháp cũng đã được chuyển đổi từ 'mid-range' (khoảng giữa) sang 'mildly reduced' (giảm nhẹ) để nhấn mạnh rằng nhóm bệnh nhân HFmrEF có rất nhiều nét tương đồng với HFrEF, từ các đặc điểm lâm sàng, kết cục, cho tới khả năng đáp ứng với điều trị.<sup>32,33</sup> Hơn nữa, bệnh nhân HFmrEF có nguyên nhân bệnh sinh tương tự như bệnh nhân HFrEF, và yếu tố sinh lý bệnh cốt lõi của HFmrEF lại gần gũi với HFrEF (giảm sức co bóp và rối loạn chức năng tâm thu) hơn nhiều so với HFpEF (tăng độ cứng cơ tim và rối loạn chức năng tâm trương).<sup>34</sup> Thêm vào đó, hiệu quả của các liệu pháp điều trị nội khoa trên nhóm HFmrEF tỏ ra khá tương đồng so với nhóm HFrEF hơn là nhóm HFpEF.<sup>35–45</sup> Cuối cùng, việc xem xét xu hướng biến động (trajectories) của LVEF cũng là một yếu tố quan trọng, vì nhiều bệnh nhân sở hữu LVEF từ 41%–49% hoàn toàn có thể bị suy giảm LVEF trong tương lai.<sup>46</sup> Xuất phát từ những nhận định trên, Hội đồng chuyên trách (Task Force) của Hướng dẫn năm 2026 của ESC về quản lý suy tim đã <strong>quyết định loại bỏ kiểu hình HFmrEF</strong> và tái cấu trúc hệ thống phân loại suy tim dựa trên sinh lý bệnh học. Hệ thống mới này bao gồm hai kiểu hình độc lập:</p>
-    <ul>
-      <li>(i) HFrEF: được đặc trưng bởi LVEF \( < 50\% \) kết hợp với các triệu chứng và/hoặc dấu hiệu của suy tim.</li>
-      <li>(ii) HFpEF: được đặc trưng bởi LVEF \( \ge 50\% \), kèm theo các triệu chứng và/hoặc dấu hiệu suy tim, cùng với bằng chứng khách quan về những bất thường về cấu trúc và/hoặc chức năng tim. Những bất thường này phải phù hợp với tình trạng rối loạn chức năng tâm trương thất trái (LV) hay áp lực đổ đầy thất trái tăng cao, đồng thời được hỗ trợ bởi mức tăng của nồng độ peptide lợi niệu.</li>
-    </ul>
-    <p>Việc sử dụng một giá trị LVEF duy nhất làm điểm cắt để phân định giữa HFpEF và HFrEF có phần mang tính chủ quan và cần phải được đánh giá một cách thấu đáo trong từng bối cảnh lâm sàng thực tế, bởi lẽ kết quả đo lường luôn chứa đựng sự sai số nhất định tùy thuộc vào phương tiện hình ảnh cũng như người đọc kết quả. Thêm vào đó, LVEF có thể bị đội lên cao giả tạo trong một số trường hợp nhất định, ví dụ điển hình là hở van hai lá (MR). Nồng độ peptide lợi niệu có thể đóng vai trò như một bằng chứng hỗ trợ đắc lực cho việc chẩn đoán suy tim. Điều quan trọng là các liệu pháp điều trị bằng thuốc và thiết bị có thể dẫn đến quá trình tái cấu trúc thất trái (reverse remodelling) tích cực ở bệnh nhân HFrEF, từ đó giúp LVEF phục hồi. Nhóm bệnh nhân HFrEF sở hữu LVEF được cải thiện thường có tiên lượng khả quan hơn đáng kể. Tuy nhiên, ngoại trừ một số trường hợp đặc thù, nguyên tắc sống còn là những bệnh nhân này vẫn phải được duy trì quản lý bằng liệu pháp điều trị nội khoa tối ưu. Theo định nghĩa hiện hành, "LVEF cải thiện" đòi hỏi mức tăng tuyệt đối của LVEF phải đạt ít nhất 10%, và giá trị LVEF cuối cùng tối thiểu phải vượt ngưỡng 40% (thường đạt mức bình thường).<sup>47</sup></p>
-
-    <h4 id="3-3-2-classification-based-on-heart-failure-stages">3.3.2. Phân loại theo các giai đoạn của suy tim</h4>
-    <p>Một hệ thống phân loại bổ sung dựa trên các giai đoạn của suy tim đã được đề xuất trước đây.<sup>4</sup> Hội đồng chuyên trách (Task Force) đã quyết định lồng ghép hệ thống phân loại này vào bản hướng dẫn, xuất phát từ việc chúng tôi đang đặt trọng tâm nhiều hơn vào khâu dự phòng và chẩn đoán suy tim từ sớm (<strong>Hình 2</strong>).</p>
-
-<figure style="margin: 2rem auto;">
-    <img src="https://file.garden/aRcee0oeuCLsBw6X/esc%20hf%202026/02_linnk_ai_Qecg_translated_vi-VN.png" alt="Các giai đoạn và phân loại suy tim">
-    <figcaption class="image-caption">
-        <strong>Hình 2. Các giai đoạn và phân loại suy tim.</strong> 
-        <span style="color: #707070; font-style: italic;">
-            <strong>AMT:</strong> liệu pháp điều trị nội khoa bổ sung; <strong>FMT:</strong> điều trị nội khoa nền tảng; <strong>GDIT:</strong> liệu pháp can thiệp theo hướng dẫn; <strong>HF:</strong> suy tim; <strong>HFpEF:</strong> suy tim phân suất tống máu bảo tồn; <strong>HFrEF:</strong> suy tim phân suất tống máu giảm; <strong>LVEF:</strong> phân suất tống máu thất trái.
-        </span> 
-        <sup>a</sup>Xem Mục 4.1. Không phải tất cả đều sẽ tiến triển thành suy tim, nhưng có thể cần phải can thiệp vào các yếu tố nguy cơ. <sup>b</sup>Ví dụ: phì đại thất trái, giãn buồng tim, bất thường vận động thành thất, bất thường mô cơ tim (ví dụ: bằng chứng phù cơ tim, bất thường sẹo/xơ hóa trên hình ảnh cộng hưởng từ tim chuỗi xung T2-weighted hoặc chụp ngấm thuốc đối quang từ muộn), bệnh van tim. <sup>c</sup>Ví dụ: giảm chức năng tâm thu thất trái hoặc thất phải, bằng chứng tăng áp lực đổ đầy (bằng các phương pháp đo xâm lấn hoặc không xâm lấn), bất thường chức năng tâm trương. <sup>d</sup>Đặc biệt trong bối cảnh phơi nhiễm với các chất độc cho tim. <sup>e</sup>Chi tiết xin xem Bảng 14.
-    </figcaption>
-</figure>
-    <h4 id="3-3-3-other-classifications-of-heart-failure">3.3.3. Các phân loại khác về suy tim</h4>
-    <p>Bên cạnh đó, suy tim còn có thể được phân loại dựa trên đặc điểm khởi phát lâm sàng: <em>de novo</em> (những bệnh nhân chưa từng có tiền sử được chẩn đoán suy tim) so với suy tim đã hiện hữu từ trước (những bệnh nhân đã được xác định chẩn đoán suy tim), và suy tim mạn tính so với suy tim mất bù (DHF). Suy tim mạn tính có thể chuyển biến xấu thành DHF. Những thông tin chi tiết về các định nghĩa cũng như phân loại phụ của DHF sẽ được trình bày cụ thể trong Mục 7.</p>
-    <p>Cuối cùng, bác sĩ có thể sử dụng một phương pháp phân loại khác: phân định giữa suy tim trái đơn thuần, suy tim phải đơn thuần, và suy tim toàn bộ (kết hợp cả trái và phải). Nguyên nhân sâu xa và phổ biến nhất dẫn đến suy tim phải mạn tính chính là tình trạng tăng áp động mạch phổi xuất phát từ sự rối loạn chức năng thất trái [nhóm 2 theo Tổ chức Y tế Thế giới (WHO)], kéo theo hệ lụy là tình trạng suy tim kết hợp cả hai bên. Mặc dù vậy, vẫn tồn tại hàng loạt các nguyên nhân dẫn đến suy tim phải đơn thuần, ví dụ như nhồi máu cơ tim thất phải (RV); bệnh cơ tim thất phải gây rối loạn nhịp (ARVC); tăng áp động mạch phổi thuộc nhóm WHO 1, 3, 4 và 5; và bệnh lý hở van ba lá hoặc van động mạch phổi. Toàn bộ quy trình chẩn đoán và quản lý suy tim phải mạn tính đã được đề cập một cách toàn diện trong một bài báo quan điểm (position paper) gần đây của Hiệp hội Suy tim (HFA).<sup>48</sup></p>
-
-    <h4 id="3-3-4-classifications-of-treatments-in-heart-failure">3.3.4. Phân loại các phương pháp điều trị suy tim</h4>
-    <p>Thuật ngữ "liệu pháp điều trị nội khoa theo hướng dẫn" (GDMT) lần đầu tiên được giới thiệu trong bản <em>Hướng dẫn năm 2013 của ACCF/AHA về quản lý suy tim</em>, đóng vai trò như viên đá tảng trong phác đồ điều trị bằng thuốc cho nhóm bệnh nhân suy tim.<sup>49</sup> Thuật ngữ này vốn dĩ được sinh ra để đại diện cho một phác đồ điều trị nội khoa tối ưu, ưu tiên bao gồm các khuyến cáo thuộc Class I, mà ở thời điểm bấy giờ chủ yếu xoay quanh việc sử dụng các thuốc ức chế men chuyển (ACE-I) / thuốc chẹn thụ thể angiotensin II (ARB), thuốc chẹn beta, và thuốc đối kháng thụ thể khoáng corticoid (MRA) đối với HFrEF. Tuy nhiên, kể từ năm 2013, cục diện điều trị bệnh nhân suy tim đã chứng kiến những bước tiến vượt bậc. Lần lượt các khuyến cáo Class I đã được thiết lập cho việc sử dụng thuốc ức chế thụ thể angiotensin–neprilysin (ARNI) và thuốc ức chế đồng vận chuyển natri-glucose 2 (SGLT2-I) trong HFrEF. Chưa dừng lại ở đó, các dữ liệu hiện tại đã đủ sức củng cố khuyến cáo Class I cho việc ứng dụng SGLT2-I và MRA trong điều trị HFpEF. Dẫu cho các liệu pháp nền tảng này nắm giữ vai trò sinh tử trong việc cải thiện tiên lượng cho bệnh nhân suy tim, vẫn còn vô vàn các phương pháp điều trị dược lý khác được hệ thống hướng dẫn công nhận, chẳng hạn như ivabradine, vericiguat, glycoside trợ tim, và mới đây nhất là nhóm thuốc đồng vận thụ thể glucagon-like peptide-1 (GLP-1 RA). Xét theo một lăng kính nào đó, tất cả các liệu pháp này hoàn toàn có thể được gọi chung là GDMT, nhưng trớ trêu thay, chúng hiện tại không được gộp vào định nghĩa của GDMT. Hơn nữa, việc lạm dụng thuật ngữ GDMT đã vô hình trung phớt lờ vai trò thiết yếu của các thiết bị hoạt động hiệp đồng với điều trị nội khoa, cũng như những quy trình can thiệp thủ thuật tân tiến có tác động mạnh mẽ đến kết cục do người bệnh tự báo cáo (patient-reported outcomes), tỷ lệ bệnh tật và tử vong. Trước bối cảnh này, Hội đồng chuyên trách (Task Force) hiện tại đã <strong>đi đến quyết định giới thiệu một hệ thống phân loại hoàn toàn mới</strong> nhằm mô tả toàn diện các liệu pháp nội khoa, thiết bị và thủ thuật trong điều trị suy tim (<strong>Hình 3</strong>). Nhờ mang bản chất linh hoạt và năng động, hệ thống phân loại mới mẻ này đảm bảo rằng các thuật ngữ sẽ luôn giữ vững tính thời sự, sẵn sàng đón nhận và dung nạp dễ dàng các liệu pháp mới trong tương lai.</p>
-
-    <p><strong>Điều trị nội khoa nền tảng (FMT - Foundational medical therapy)</strong> là cốt lõi của bất kỳ chiến lược quản lý suy tim nào. Nó được định nghĩa là liệu pháp điều trị bằng thuốc nhận được khuyến cáo Class I dành cho quần thể bệnh nhân suy tim nói chung, đi kèm với những bằng chứng thuyết phục không thể chối cãi về khả năng cải thiện tỷ lệ bệnh tật và/hoặc tử vong. Trong phạm vi của bản hướng dẫn này, FMT sẽ bao gồm: thuốc chẹn beta, ACE-I/ARNI/ARB, MRA, và SGLT2-I cho nhóm HFrEF; cùng với MRA và SGLT2-I cho nhóm HFpEF. Cụm từ "FMT tối ưu" có thể được sử dụng để chỉ việc áp dụng FMT ở liều cao nhất mà bệnh nhân có thể dung nạp được, chiếu theo các mức liều đích mà hướng dẫn đề xuất (xem Mục 6.1). Cần đặc biệt lưu ý rằng, các phương pháp điều trị nội khoa chỉ sở hữu khuyến cáo Class I cho một số phân nhóm bệnh nhân đặc thù sẽ tuyệt đối không được xếp vào định nghĩa của FMT.</p>
-    
-    <p><strong>Điều trị nội khoa bổ sung (AMT - Additional medical therapy)</strong> được định nghĩa là toàn bộ các phương pháp điều trị bằng thuốc khác có nhận khuyến cáo Class IIa/IIb; HOẶC khuyến cáo Class I nhưng chỉ được chứng minh hiệu quả trên phương diện triệu chứng và/hoặc chất lượng cuộc sống (QoL); HOẶC khuyến cáo Class I nhưng chỉ gói gọn trong các nhóm bệnh nhân/kiểu hình suy tim rất cụ thể.</p>
-    
-    <p>Như vậy, khái niệm <strong>Điều trị nội khoa theo hướng dẫn (GDMT - Guideline-directed medical therapy)</strong> mang ý nghĩa bao trùm, bao gồm cả FMT và AMT.</p>
-    
-    <p>Cuối cùng, <strong>Liệu pháp can thiệp theo hướng dẫn (GDIT - Guideline-directed interventional therapy)</strong> bao trọn tất cả các thiết bị điện tử cấy ghép tim (CIED) và các liệu pháp can thiệp đã được chính thức khuyến cáo trong tài liệu hướng dẫn.</p>
-
-<figure style="margin: 2rem auto;">
-    <img src="https://file.garden/aRcee0oeuCLsBw6X/esc%20hf%202026/03_linnk_ai_9Bjf_translated_vi-VN.png" alt="Danh pháp mới cho các liệu pháp điều trị suy tim">
-    <figcaption class="image-caption">
-        <strong>Hình 3. Danh pháp mới cho các liệu pháp điều trị suy tim.</strong> 
-        <span style="color: #707070; font-style: italic;">
-            <strong>AMT:</strong> điều trị nội khoa bổ sung; <strong>FMT:</strong> điều trị nội khoa nền tảng; <strong>GDIT:</strong> liệu pháp can thiệp theo hướng dẫn; <strong>GDMT:</strong> điều trị nội khoa theo hướng dẫn.
-        </span> 
-        Điều trị nội khoa theo hướng dẫn (GDMT) bao gồm điều trị nội khoa nền tảng (FMT) và điều trị nội khoa bổ sung (AMT). Liệu pháp can thiệp theo hướng dẫn được viết tắt là GDIT.
-    </figcaption>
-</figure>
-
+...
 </article>
     </section>
   </main>
