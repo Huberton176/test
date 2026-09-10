@@ -1409,16 +1409,23 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
 }
 
 @media print{
+
   @page{
     size:A4 portrait;
     margin:9mm 18mm 9mm 18mm;
-    /* Keep the page itself white. Header/footer colors are painted
-       by the six margin boxes below so the colored bands stay isolated
-       from the document content. */
     background:#ffffff;
 
-    /* HEADER — all three margin boxes share the same background,
-       so the red band runs continuously across both side margins. */
+    /* ===== GÓC TRÊN — nối liền dải đỏ với @top-left / @top-right ===== */
+    @top-left-corner{
+      content:"";
+      background:#860000;
+    }
+    @top-right-corner{
+      content:"";
+      background:#860000;
+    }
+
+    /* HEADER */
     @top-left{
       content:"Khuyến cáo ESC 2026";
       background:#860000;
@@ -1450,7 +1457,17 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
       padding:1mm 4mm;
     }
 
-    /* FOOTER — same principle, grey band across the full margin width. */
+    /* ===== GÓC DƯỚI — nối liền dải xám với @bottom-left / @bottom-right ===== */
+    @bottom-left-corner{
+      content:"";
+      background:#e3e3e3;
+    }
+    @bottom-right-corner{
+      content:"";
+      background:#e3e3e3;
+    }
+
+    /* FOOTER */
     @bottom-left{
       content:"ⓕ  Hoàng Linh";
       background:#e3e3e3;
@@ -1489,102 +1506,20 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
       vertical-align:middle;
       padding:1mm 4mm;
     }
-    @page{
-  size:A4 portrait;
-  margin:9mm 18mm 9mm 18mm;
-  background:#ffffff;
-
-  /* ===== GÓC TRÊN — nối liền dải đỏ với @top-left / @top-right ===== */
-  @top-left-corner{
-    content:"";
-    background:#860000;
-  }
-  @top-right-corner{
-    content:"";
-    background:#860000;
   }
 
-  @top-left{
-    content:"Khuyến cáo ESC 2026";
-    background:#860000;
-    color:#fff;
-    font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
-    font-size:8pt;
-    font-weight:800;
-    white-space:nowrap;
-    text-align:left;
-    vertical-align:middle;
-    padding:1mm 4mm;
+  html,
+  body{
+    background:#fff!important;
+    color:#111!important;
+    margin:0!important;
+    padding:0!important;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
   }
 
-  @top-center{
-    content:"";
-    background:#860000;
-  }
-
-  @top-right{
-    content:"Biên dịch: BS. Trần Thanh Hoàng Linh";
-    background:#860000;
-    color:#fff;
-    font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
-    font-size:8pt;
-    font-weight:800;
-    white-space:nowrap;
-    text-align:right;
-    vertical-align:middle;
-    padding:1mm 4mm;
-  }
-
-  /* ===== GÓC DƯỚI — nối liền dải xám với @bottom-left / @bottom-right ===== */
-  @bottom-left-corner{
-    content:"";
-    background:#e3e3e3;
-  }
-  @bottom-right-corner{
-    content:"";
-    background:#e3e3e3;
-  }
-
-  @bottom-left{
-    content:"ⓕ  Hoàng Linh";
-    background:#e3e3e3;
-    color:#111;
-    font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
-    font-size:7pt;
-    font-weight:700;
-    white-space:nowrap;
-    text-align:left;
-    vertical-align:middle;
-    padding:1mm 4mm;
-  }
-
-  @bottom-center{
-    content:"Link đọc bài viết: https://example.com";
-    background:#e3e3e3;
-    color:#111;
-    font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
-    font-size:7pt;
-    font-weight:700;
-    white-space:nowrap;
-    text-align:center;
-    vertical-align:middle;
-    padding:1mm;
-  }
-
-  @bottom-right{
-    content:counter(page);
-    background:#e3e3e3;
-    color:#111;
-    font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
-    font-size:7pt;
-    font-weight:700;
-    white-space:nowrap;
-    text-align:right;
-    vertical-align:middle;
-    padding:1mm 4mm;
-  }
+  /* ... phần còn lại của @media print giữ nguyên như cũ ... */
 }
-  }
 
   html,
   body{
