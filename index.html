@@ -1041,55 +1041,69 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     padding-top:10px;
   }
 
+  /* Ẩn mục lục Sidebar (Bản Desktop) */
   .toc-panel{
     display:none;
   }
 
+  /* 1. THIẾT KẾ LẠI MỤC LỤC MOBILE: NỔI BẬT VÀ GHIM ĐỈNH (STICKY) */
   .mobile-toc{
+    position:sticky;
+    top:10px;
+    z-index:60;
     width:100%;
     display:flex;
     align-items:center;
-    gap:8px;
-    margin:0 0 12px;
-    padding:9px 11px;
+    gap:10px;
+    margin:0 0 16px;
+    padding:10px 14px;
     border:1px solid var(--border);
     border-radius:12px;
     background:var(--surface);
+    box-shadow:0 6px 20px rgba(0,0,0,0.1); /* Đổ bóng để nổi lên trên văn bản */
   }
 
   .mobile-toc label{
-    color:var(--muted);
-    font-size:11px;
+    color:var(--brand);
+    font-size:12px;
     font-weight:900;
     white-space:nowrap;
+    text-transform:uppercase;
   }
 
   .mobile-toc select{
     flex:1;
     min-width:0;
-    height:36px;
-    padding:0 8px;
+    height:38px;
+    padding:0 10px;
     border:1px solid var(--border);
     border-radius:8px;
-    background:var(--surface);
+    background:var(--surface-soft);
     color:var(--text);
+    font-weight:600;
   }
 
-  /* Bỏ sticky để không che màn hình điện thoại */
+  /* 2. CHỈNH SỬA LẠI BOX GUIDELINE (HERO) */
   .reader-hero{
     position:static;
     top:auto;
-    padding:20px;
-    margin-bottom:14px;
+    padding:20px 18px; /* Giảm độ dày của box */
+    margin-bottom:16px;
     box-shadow:var(--shadow);
   }
 
   .reader-hero h1{
-    font-size:24px;
+    font-size:24px !important; /* Dùng !important đè style="font-size:30px" trong HTML */
   }
 
   .document-surface article{
     padding:20px 18px 40px;
+  }
+
+  /* Tránh bị thanh Mục lục (đang sticky) che lấp tiêu đề khi bấm cuộn tới */
+  .document-surface h1, .document-surface h2, .document-surface h3, 
+  .document-surface h4, .document-surface h5{
+    scroll-margin-top: 80px; 
   }
 }
 
@@ -1104,23 +1118,29 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     width:calc(100% - 16px);
   }
 
+  /* 2. ÉP GỌN TIẾP BOX GUIDELINE CHO MÀN HÌNH NHỎ */
   .reader-hero{
     padding:16px 14px;
     border-radius:12px;
   }
 
   .reader-hero h1{
-    font-size:21px;
-    line-height:1.25;
+    font-size:20px !important; /* Chữ nhỏ lại, gọn gàng hơn */
+    line-height:1.35 !important;
+  }
+
+  .reader-hero p{
+    margin-top:6px; /* Giảm khoảng cách thừa */
   }
 
   .document-surface{
     border-radius:12px;
   }
 
+  /* 3. BẬT LẠI CĂN ĐỀU 2 BÊN (JUSTIFY) */
   .document-surface article{
     padding:16px 14px 35px;
-    text-align:left; /* Triệt tiêu khoảng trống dị dạng khi justify trên màn hình hẹp */
+    text-align:justify; /* Căn đều 2 bên theo đúng yêu cầu */
   }
 
   .document-surface h1{ font-size:1.45em; margin:1.4rem 0 .8rem; }
