@@ -1399,16 +1399,32 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
    ========================================================= */
 
 .print-watermark,
+.print-layout,
 .print-header,
 .print-footer{
-  display:none;
+  display:none !important;
+  visibility:hidden !important;
+}
+
+/* Tuyệt đối không tạo bất kỳ thành phần Print/PDF nào trên bản đọc màn hình. */
+@media screen{
+  .print-watermark,
+  .print-layout,
+  .print-header,
+  .print-footer{
+    display:none !important;
+    visibility:hidden !important;
+  }
 }
 
 @media print{
+  html.is-printing .reader-layout{
+    display:none !important;
+  }
+
   @page{
     size:A4 portrait;
-    /* Chừa riêng vùng đầu/cuối trang cho header + footer cố định */
-    margin:30mm 14mm 30mm;
+    margin:14mm 14mm;
   }
 
   html,
@@ -1422,103 +1438,62 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     print-color-adjust:exact;
   }
 
-  .toc-panel,
-  .mobile-toc,
-  #progressText{
-    display:none!important;
-  }
-
-  .reader-layout{
-    display:block!important;
+  /* Không dùng header/footer position:fixed.
+     Chúng nằm trong THEAD/TFOOT để Chrome tự lặp theo từng trang,
+     vì vậy không thể chèn đè vào nội dung khi phân trang. */
+  .print-layout{
+    display:table!important;
     width:100%!important;
-    max-width:none!important;
+    border-collapse:collapse!important;
+    table-layout:fixed!important;
     margin:0!important;
     padding:0!important;
   }
 
-  .reader-main{
-    width:100%!important;
-    min-width:0!important;
+  .print-layout thead{
+    display:table-header-group!important;
   }
 
-  /* Giữ toàn bộ hộp GUIDELINE từ tiêu đề đến Link bài đọc trên cùng một khối */
-  .mobile-sticky-shell{
-    position:static!important;
-    width:100%!important;
+  .print-layout tbody{
+    display:table-row-group!important;
+  }
+
+  .print-layout tfoot{
+    display:table-footer-group!important;
+  }
+
+  .print-layout th,
+  .print-layout td{
+    border:0!important;
     padding:0!important;
     margin:0!important;
-    background:transparent!important;
-    break-inside:avoid-page;
-    page-break-inside:avoid;
+    background:#fff!important;
   }
 
-  .reader-hero{
-    position:static!important;
-    width:100%!important;
-    height:auto!important;
-    min-height:0!important;
-    max-height:none!important;
-    margin:0 0 12mm!important;
-    padding:14mm 12mm!important;
-    overflow:visible!important;
-    break-inside:avoid-page;
-    page-break-inside:avoid;
-    box-shadow:none!important;
-    border:1px solid #cfd5da!important;
-    isolation:auto!important;
+  .print-layout-head-cell{
+    height:11mm;
+    vertical-align:middle;
   }
 
-  .reader-hero::after{
-    display:none!important;
+  .print-layout-foot-cell{
+    height:10mm;
+    vertical-align:middle;
   }
 
-  .document-surface{
-    width:100%!important;
-    box-shadow:none!important;
-    border:1px solid #cfd5da!important;
+  .print-layout-content-cell{
+    vertical-align:top;
   }
 
-  .document-surface article{
-    width:100%!important;
-  }
-
-  /* Logo + tên bác sĩ dạng watermark, ở chính giữa mỗi trang in */
-  .print-watermark{
-    display:flex!important;
-    position:fixed;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    z-index:20;
-    width:auto;
-    height:50vh;
-    max-width:78vw;
+  .print-layout-header,
+  .print-layout-footer{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
     align-items:center;
-    justify-content:center;
-    pointer-events:none;
-    opacity:.10;
-  }
-
-  .print-watermark img{
-    display:block;
-    width:auto;
-    height:50vh;
-    max-width:78vw;
-    margin:0!important;
-    object-fit:contain;
-  }
-
-  .print-header,
-  .print-footer{
-    display:grid!important;
-    grid-template-columns:1fr auto 1fr;
-    align-items:center;
+    width:100%;
+    min-height:8mm;
     gap:8mm;
-    position:fixed;
-    left:0;
-    right:0;
-    z-index:100;
-    padding:0 4mm;
+    padding:1.5mm 1mm;
+    box-sizing:border-box;
     font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
     font-size:8.5pt;
     line-height:1.2;
@@ -1527,98 +1502,139 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     background:#fff;
   }
 
-  .print-header{
-    top:7mm;
-    height:10mm;
+  .print-layout-header{
+    border-bottom:0.25mm solid #dfe4e8;
   }
 
-  .print-footer{
-    bottom:7mm;
-    height:10mm;
+  .print-layout-footer{
+    border-top:0.25mm solid #dfe4e8;
   }
 
-  .print-header-left,
-  .print-header-center,
-  .print-header-right{
+  .print-layout-left,
+  .print-layout-center,
+  .print-layout-right{
     display:flex;
     align-items:center;
     min-width:0;
-    gap:2mm;
+    gap:1.5mm;
     white-space:nowrap;
   }
 
-  .print-header-left{
-    justify-content:flex-start;
-  }
+  .print-layout-left{justify-content:flex-start;}
+  .print-layout-center{justify-content:center;text-align:center;}
+  .print-layout-right{justify-content:flex-end;}
 
-  .print-header-center{
-    justify-content:center;
-    text-align:center;
-  }
-
-  .print-header-right{
-    justify-content:flex-end;
-  }
-
-  .print-header a{
+  .print-layout a{
     color:#111!important;
     text-decoration:none!important;
-    overflow-wrap:anywhere;
   }
 
   .print-contact-icon{
-    width:11pt;
-    height:11pt;
-    flex:0 0 11pt;
+    width:10pt;
+    height:10pt;
+    flex:0 0 10pt;
     display:block;
   }
 
-  .print-header .facebook-icon,
-  .print-footer .facebook-icon{
-    color:#1877f2;
+  .print-layout .facebook-icon{color:#1877f2;}
+  .print-layout .mail-icon{color:#111;}
+
+  /* Chỉ in print-layout, không in layout web thông thường. */
+  .reader-layout{
+    display:none!important;
   }
 
-  .print-header .mail-icon,
-  .print-footer .mail-icon{
-    color:#111;
+  .print-layout .reader-main{
+    display:block!important;
+    width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+    padding:0!important;
   }
 
-  /* Nội dung vẫn nằm trên watermark */
-  .reader-main,
-  .document-surface,
-  .reader-hero,
-  .mobile-sticky-shell{
-    position:relative;
-    z-index:10;
+  .print-layout .mobile-sticky-shell{
+    position:static!important;
+    width:100%!important;
+    margin:0 0 7mm!important;
+    padding:0!important;
+    background:transparent!important;
+    break-inside:avoid-page;
+    page-break-inside:avoid;
   }
 
+  .print-layout .reader-hero{
+    position:static!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:7mm 9mm!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    break-inside:avoid-page;
+    page-break-inside:avoid;
+    box-shadow:none!important;
+    border:0.3mm solid #cfd5da!important;
+    border-radius:5mm!important;
+  }
+
+  .print-layout .reader-hero::after{
+    display:none!important;
+  }
+
+  .print-layout .document-surface{
+    width:100%!important;
+    box-shadow:none!important;
+    border:0.3mm solid #cfd5da!important;
+    border-radius:5mm!important;
+  }
+
+  .print-layout .document-surface article{
+    width:100%!important;
+  }
+
+  /* Watermark: logo lớn, tâm trang, chỉ là lớp nền mờ */
   .print-watermark{
-    z-index:20;
+    display:flex!important;
+    position:fixed!important;
+    left:50%!important;
+    top:50%!important;
+    transform:translate(-50%,-50%)!important;
+    width:auto!important;
+    height:50vh!important;
+    max-width:78vw!important;
+    align-items:center!important;
+    justify-content:center!important;
+    pointer-events:none!important;
+    opacity:.10!important;
+    z-index:0!important;
   }
 
-  .print-header,
-  .print-footer{
-    z-index:100;
-    box-sizing:border-box;
+  .print-watermark img{
+    display:block!important;
+    width:auto!important;
+    height:50vh!important;
+    max-width:78vw!important;
+    margin:0!important;
+    object-fit:contain!important;
   }
 
-  /* Không để các dòng liên hệ đè lên vùng nội dung khi Chrome phân trang */
-  .document-surface{
+  .print-layout,
+  .print-layout-content-cell,
+  .print-layout-content-cell .reader-main,
+  .print-layout-content-cell .document-surface{
     position:relative!important;
+    z-index:1!important;
   }
 
-  .document-surface article{
-    break-before:auto;
-  }
-
-  /* Không tạo khoảng cách thừa do sticky/mobile layout khi in */
-  .hero-contact,
-  .hero-reading-link{
+  .print-layout-content-cell .hero-contact,
+  .print-layout-content-cell .hero-reading-link{
     break-inside:avoid;
     page-break-inside:avoid;
   }
 
-  table,
+  /* Bảo vệ các khối nhỏ, nhưng cho phép paragraph/table lớn phân trang tự nhiên */
   figure,
   .info-box,
   .step-card,
@@ -1629,7 +1645,6 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     page-break-inside:avoid;
   }
 }
-
 </style>
 
 <body>
@@ -2435,60 +2450,98 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
   </main>
 </div>
 
+<!-- Print-only layout: THEAD/TFOOT được Chrome lặp ở đầu/cuối mỗi trang -->
+<table class="print-layout" aria-hidden="true">
+  <thead>
+    <tr>
+      <td class="print-layout-head-cell">
+        <div class="print-layout-header">
+          <div class="print-layout-left">
+            <svg class="print-contact-icon facebook-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.006 10.125 11.923v-8.432H7.078v-3.491h3.047V9.413c0-3.017 1.792-4.689 4.533-4.689 1.312 0 2.686.235 2.686.235v2.973h-1.514c-1.491 0-1.955.93-1.955 1.885v2.261h3.328l-.532 3.491h-2.796v8.432C19.612 23.079 24 18.092 24 12.073z"/>
+            </svg>
+            <span>Hoàng Linh</span>
+          </div>
+          <div class="print-layout-center">
+            <span>Link bài đọc:</span>
+            <a href="https://example.com">https://example.com</a>
+          </div>
+          <div class="print-layout-right">
+            <svg class="print-contact-icon mail-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+            </svg>
+            <span>dr.tthlinh@gmail.com</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="print-layout-content-cell" id="printLayoutContent"></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td class="print-layout-foot-cell">
+        <div class="print-layout-footer">
+          <div class="print-layout-left">
+            <svg class="print-contact-icon facebook-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.006 10.125 11.923v-8.432H7.078v-3.491h3.047V9.413c0-3.017 1.792-4.689 4.533-4.689 1.312 0 2.686.235 2.686.235v2.973h-1.514c-1.491 0-1.955.93-1.955 1.885v2.261h3.328l-.532 3.491h-2.796v8.432C19.612 23.079 24 18.092 24 12.073z"/>
+            </svg>
+            <span>Hoàng Linh</span>
+          </div>
+          <div class="print-layout-center">
+            <span>Link bài đọc:</span>
+            <a href="https://example.com">https://example.com</a>
+          </div>
+          <div class="print-layout-right">
+            <svg class="print-contact-icon mail-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+            </svg>
+            <span>dr.tthlinh@gmail.com</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
 <div class="print-watermark" aria-hidden="true">
   <img src="https://file.garden/aRcee0oeuCLsBw6X/logo" alt="">
 </div>
 
-<div class="print-header" aria-hidden="true">
-  <div class="print-header-left">
-    <svg class="print-contact-icon facebook-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path fill="currentColor" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.006 10.125 11.923v-8.432H7.078v-3.491h3.047V9.413c0-3.017 1.792-4.689 4.533-4.689 1.312 0 2.686.235 2.686.235v2.973h-1.514c-1.491 0-1.955.93-1.955 1.885v2.261h3.328l-.532 3.491h-2.796v8.432C19.612 23.079 24 18.092 24 12.073z"/>
-    </svg>
-    <span>Hoàng Linh</span>
-  </div>
-  <div class="print-header-center">
-    <span>Link bài đọc:</span>
-    <a href="https://example.com">https://example.com</a>
-  </div>
-  <div class="print-header-right">
-    <svg class="print-contact-icon mail-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0 2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
-    </svg>
-    <span>dr.tthlinh@gmail.com</span>
-  </div>
-</div>
-
-<div class="print-footer" aria-hidden="true">
-  <div class="print-header-left">
-    <svg class="print-contact-icon facebook-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path fill="currentColor" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.006 10.125 11.923v-8.432H7.078v-3.491h3.047V9.413c0-3.017 1.792-4.689 4.533-4.689 1.312 0 2.686.235 2.686.235v2.973h-1.514c-1.491 0-1.955.93-1.955 1.885v2.261h3.328l-.532 3.491h-2.796v8.432C19.612 23.079 24 18.092 24 12.073z"/>
-    </svg>
-    <span>Hoàng Linh</span>
-  </div>
-  <div class="print-header-center">
-    <span>Link bài đọc:</span>
-    <a href="https://example.com">https://example.com</a>
-  </div>
-  <div class="print-header-right">
-    <svg class="print-contact-icon mail-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2-2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
-    </svg>
-    <span>dr.tthlinh@gmail.com</span>
-  </div>
-</div>
 
 <script>
 
 (function(){
 
-  // Đảm bảo logo watermark đã tải trước khi trình duyệt tạo bản in/PDF
+  // Print: đưa reader-main vào bảng có THEAD/TFOOT để header/footer lặp đúng
+  // theo từng trang mà không đè lên vùng nội dung.
   const printLogo = document.querySelector(".print-watermark img");
+  const printLayoutContent = document.getElementById("printLayoutContent");
+  const readerMain = document.querySelector(".reader-main");
+  let printContentMoved = false;
+
   function ensurePrintLogoLoaded(){
     if (!printLogo || printLogo.complete) return Promise.resolve();
     return new Promise(resolve => {
       printLogo.addEventListener("load", resolve, {once:true});
       printLogo.addEventListener("error", resolve, {once:true});
     });
+  }
+
+  function preparePrintLayout(){
+    if (printContentMoved || !readerMain || !printLayoutContent) return;
+    printLayoutContent.appendChild(readerMain);
+    printContentMoved = true;
+  }
+
+  function restorePrintLayout(){
+    if (!printContentMoved || !readerMain) return;
+    const parent = document.querySelector(".reader-layout");
+    if (parent) parent.appendChild(readerMain);
+    printContentMoved = false;
   }
 
   const root = document.documentElement;
@@ -2586,6 +2639,17 @@ html[data-theme="dark"] .document-surface [style*="color:#000"]{
     localStorage.setItem(themeKey, theme);
   }
 
+
+  window.addEventListener("beforeprint", function(){
+    document.documentElement.classList.add("is-printing");
+    preparePrintLayout();
+    ensurePrintLogoLoaded();
+  });
+
+  window.addEventListener("afterprint", function(){
+    restorePrintLayout();
+    document.documentElement.classList.remove("is-printing");
+  });
 
   mobileToc.addEventListener("change", function(){
     if (!this.value) return;
